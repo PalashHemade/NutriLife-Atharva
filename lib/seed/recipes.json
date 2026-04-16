@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Vegetable Upma",
+    "type": "breakfast",
+    "dietType": "Balanced",
+    "ingredients": ["Semolina", "Vegetables", "Spices", "Oil"],
+    "instructions": "Roast semolina, cook vegetables, mix and serve.",
+    "cuisine": "South Indian",
+    "nutritionPer100g": {
+      "caloriesKcal": 280,
+      "proteinG": 8,
+      "carbsG": 42,
+      "fatG": 8,
+      "fiberG": 4,
+      "sugarG": 2,
+      "sodiumMg": 150
+    },
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 2
+  },
+  {
+    "name": "Dal Tadka with Chapati",
+    "type": "lunch",
+    "dietType": "Balanced",
+    "ingredients": ["Lentils", "Spices", "Whole wheat flour", "Oil"],
+    "instructions": "Cook lentils with spices, make chapatis, serve together.",
+    "cuisine": "Indian",
+    "nutritionPer100g": {
+      "caloriesKcal": 260,
+      "proteinG": 9,
+      "carbsG": 34,
+      "fatG": 7,
+      "fiberG": 6,
+      "sugarG": 1,
+      "sodiumMg": 200
+    },
+    "prepTime": 20,
+    "cookTime": 30,
+    "servings": 2
+  },
+  {
+    "name": "Palak Paneer with Roti",
+    "type": "dinner",
+    "dietType": "Balanced",
+    "ingredients": ["Spinach", "Paneer", "Spices", "Whole wheat flour"],
+    "instructions": "Cook spinach with paneer and spices, serve with roti.",
+    "cuisine": "Indian",
+    "nutritionPer100g": {
+      "caloriesKcal": 240,
+      "proteinG": 11,
+      "carbsG": 20,
+      "fatG": 10,
+      "fiberG": 3,
+      "sugarG": 2,
+      "sodiumMg": 180
+    },
+    "prepTime": 15,
+    "cookTime": 25,
+    "servings": 2
+  },
+  {
+    "name": "Sprouts Salad",
+    "type": "snack",
+    "dietType": "Balanced",
+    "ingredients": ["Sprouted lentils", "Vegetables", "Lemon", "Spices"],
+    "instructions": "Mix sprouted lentils with chopped vegetables and spices.",
+    "cuisine": "Indian",
+    "nutritionPer100g": {
+      "caloriesKcal": 150,
+      "proteinG": 12,
+      "carbsG": 22,
+      "fatG": 2,
+      "fiberG": 8,
+      "sugarG": 3,
+      "sodiumMg": 50
+    },
+    "prepTime": 10,
+    "cookTime": 0,
+    "servings": 1
+  },
+  {
+    "name": "Grilled Chicken Salad",
+    "type": "lunch",
+    "dietType": "Low_Carb",
+    "ingredients": ["Chicken breast", "Mixed greens", "Olive oil", "Herbs"],
+    "instructions": "Grill chicken, toss with greens and dressing.",
+    "cuisine": "Mediterranean",
+    "nutritionPer100g": {
+      "caloriesKcal": 180,
+      "proteinG": 25,
+      "carbsG": 5,
+      "fatG": 8,
+      "fiberG": 2,
+      "sugarG": 1,
+      "sodiumMg": 120
+    },
+    "prepTime": 15,
+    "cookTime": 15,
+    "servings": 1
+  },
+  {
+    "name": "Quinoa Bowl",
+    "type": "dinner",
+    "dietType": "Balanced",
+    "ingredients": ["Quinoa", "Vegetables", "Avocado", "Nuts"],
+    "instructions": "Cook quinoa, top with vegetables and avocado.",
+    "cuisine": "Global",
+    "nutritionPer100g": {
+      "caloriesKcal": 220,
+      "proteinG": 8,
+      "carbsG": 30,
+      "fatG": 9,
+      "fiberG": 5,
+      "sugarG": 2,
+      "sodiumMg": 100
+    },
+    "prepTime": 10,
+    "cookTime": 20,
+    "servings": 1
+  },
+  {
+    "name": "Oatmeal with Berries",
+    "type": "breakfast",
+    "dietType": "Balanced",
+    "ingredients": ["Oats", "Berries", "Milk", "Honey"],
+    "instructions": "Cook oats with milk, top with berries.",
+    "cuisine": "Global",
+    "nutritionPer100g": {
+      "caloriesKcal": 200,
+      "proteinG": 6,
+      "carbsG": 32,
+      "fatG": 4,
+      "fiberG": 4,
+      "sugarG": 12,
+      "sodiumMg": 80
+    },
+    "prepTime": 5,
+    "cookTime": 10,
+    "servings": 1
+  },
+  {
+    "name": "Greek Yogurt Parfait",
+    "type": "snack",
+    "dietType": "Low_Carb",
+    "ingredients": ["Greek yogurt", "Nuts", "Berries"],
+    "instructions": "Layer yogurt with nuts and berries.",
+    "cuisine": "Mediterranean",
+    "nutritionPer100g": {
+      "caloriesKcal": 160,
+      "proteinG": 15,
+      "carbsG": 12,
+      "fatG": 7,
+      "fiberG": 3,
+      "sugarG": 8,
+      "sodiumMg": 60
+    },
+    "prepTime": 5,
+    "cookTime": 0,
+    "servings": 1
+  },
+  {
+    "name": "Steamed Fish with Vegetables",
+    "type": "dinner",
+    "dietType": "Low_Sodium",
+    "ingredients": ["Fish fillet", "Mixed vegetables", "Herbs"],
+    "instructions": "Steam fish with vegetables and herbs.",
+    "cuisine": "Asian",
+    "nutritionPer100g": {
+      "caloriesKcal": 120,
+      "proteinG": 20,
+      "carbsG": 8,
+      "fatG": 3,
+      "fiberG": 3,
+      "sugarG": 4,
+      "sodiumMg": 80
+    },
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 1
+  },
+  {
+    "name": "Avocado Toast",
+    "type": "breakfast",
+    "dietType": "Balanced",
+    "ingredients": ["Whole grain bread", "Avocado", "Tomato", "Egg"],
+    "instructions": "Toast bread, mash avocado on top, add toppings.",
+    "cuisine": "Global",
+    "nutritionPer100g": {
+      "caloriesKcal": 250,
+      "proteinG": 9,
+      "carbsG": 25,
+      "fatG": 14,
+      "fiberG": 7,
+      "sugarG": 3,
+      "sodiumMg": 150
+    },
+    "prepTime": 5,
+    "cookTime": 5,
+    "servings": 1
+  }
+]
