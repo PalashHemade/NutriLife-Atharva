@@ -65,11 +65,17 @@ export async function POST(req: Request) {
         Weekly_Exercise_Hours: weeklyExerciseHours || 3,
       };
 
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 4000); // 4-second timeout to prevent UI hangs
+
       const mlRes = await fetch(`${process.env.ML_SERVICE_URL || "http://localhost:8000"}/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(mlPayload),
+        signal: controller.signal,
       });
+      clearTimeout(timeoutId);
+      
       if (mlRes.ok) {
         const mlData = await mlRes.json();
         dietCategory = mlData.diet || "Balanced";

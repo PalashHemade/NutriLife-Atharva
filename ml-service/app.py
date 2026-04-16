@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import joblib
 import numpy as np
 import pandas as pd
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 app = FastAPI(title="NutriLife ML Service")
 
@@ -17,8 +20,10 @@ app.add_middleware(
 
 # Load model and encoder
 try:
-    model = joblib.load("nutrilife_pipeline.pkl")
-    target_encoder = joblib.load("target_encoder.pkl")
+    model_path = os.path.join(BASE_DIR, "nutrilife_pipeline.pkl")
+    encoder_path = os.path.join(BASE_DIR, "target_encoder.pkl")
+    model = joblib.load(model_path)
+    target_encoder = joblib.load(encoder_path)
     print("✅ Model and encoder loaded successfully.")
     print(f"   Diet classes: {list(target_encoder.classes_)}")
 except Exception as e:
