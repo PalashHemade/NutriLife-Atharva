@@ -1,0 +1,41 @@
+services:
+  ml-service:
+    build:
+      context: ./ml-service
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/').status==200 else 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+  app:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - NEXTAUTH_URL=${NEXTAUTH_URL:-http://localhost:3000}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      # MongoDB Atlas is a cloud cluster, reachable over the public internet
+      # from inside the container exactly like it is from the host - no
+      # host.docker.internal networking trick needed (that was only for
+      # when Mongo ran locally on the host machine).
+      - MONGODB_URI=${MONGODB_URI}
+      # Talk to the ml-service container over the compose network by its
+      # service name, not localhost:8000 (which would mean this container).
+      - ML_SERVICE_URL=http://ml-service:8000
+    depends_on:
+      ml-service:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/', r => process.exit(r.statusCode < 500 ? 0 : 1)).on('error', () => process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s

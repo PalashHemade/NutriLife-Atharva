@@ -4,9 +4,9 @@ import { useSession, signOut } from "next-auth/react";
 import { useState, useEffect, useCallback } from "react";
 
 const S = {
-  bg: "#020817", sidebar: "#0a1628", card: "#0f172a", border: "#1e293b",
-  text: "#f1f5f9", muted: "#64748b", green: "#10b981", accent: "#06b6d4",
-  red: "#f87171", yellow: "#f59e0b", purple: "#a78bfa",
+  bg: "#F8FAFC", sidebar: "#fff", card: "#fff", border: "#E2E8F0", panel: "#F8FAFC",
+  text: "#1E293B", muted: "#64748B", green: "#00C896", accent: "#0891B2",
+  red: "#DC2626", yellow: "#D97706", purple: "#7C3AED",
 };
 
 type NavSection = "dashboard" | "meals" | "recipes" | "recipe" | "activity" | "nutritionists";
@@ -22,24 +22,24 @@ function Sidebar({ active, setActive, name }: { active: NavSection; setActive: (
     { id: "nutritionists", icon: "👨‍⚕️", label: "Nutritionists" },
   ];
   return (
-    <aside style={{ width: 230, background: S.sidebar, borderRight: `1px solid ${S.border}`, display: "flex", flexDirection: "column", flexShrink: 0, position: "sticky", top: 0, height: "100vh" }}>
-      <div style={{ padding: "24px 20px 20px", borderBottom: `1px solid ${S.border}` }}>
+    <aside style={{ width: 230, background: S.sidebar, borderRight: `1px solid #F1F5F9`, display: "flex", flexDirection: "column", flexShrink: 0, position: "sticky", top: 0, height: "100vh" }}>
+      <div style={{ padding: "24px 20px 20px", borderBottom: `1px solid #F1F5F9` }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 32, height: 32, background: `linear-gradient(135deg,${S.green},#059669)`, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>⚡</div>
+          <div style={{ width: 32, height: 32, background: `linear-gradient(135deg,${S.green},#0EA5A4)`, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, boxShadow: "0 4px 10px rgba(0,200,150,0.25)" }}>⚡</div>
           <span style={{ fontWeight: 800, fontSize: 16, color: S.text }}>NutriLife</span>
         </div>
       </div>
       <nav style={{ flex: 1, padding: "16px 12px" }}>
         {items.map(n => (
           <button key={n.id} onClick={() => setActive(n.id)}
-            style={{ width: "100%", display: "flex", alignItems: "center", gap: 12, padding: "10px 12px", borderRadius: 10, marginBottom: 4, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 14, transition: "all 0.15s", background: active === n.id ? "rgba(16,185,129,0.15)" : "transparent", color: active === n.id ? S.green : S.muted }}>
+            style={{ width: "100%", display: "flex", alignItems: "center", gap: 12, padding: "10px 12px", borderRadius: 10, marginBottom: 4, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 14, transition: "all 0.15s", background: active === n.id ? "rgba(0,200,150,0.1)" : "transparent", color: active === n.id ? S.green : S.muted }}>
             <span style={{ fontSize: 18 }}>{n.icon}</span>{n.label}
           </button>
         ))}
       </nav>
-      <div style={{ padding: "16px 12px", borderTop: `1px solid ${S.border}` }}>
+      <div style={{ padding: "16px 12px", borderTop: `1px solid #F1F5F9` }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12, padding: "0 4px" }}>
-          <div style={{ width: 32, height: 32, borderRadius: "50%", background: `linear-gradient(135deg,${S.green},#059669)`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 13, color: "#fff", flexShrink: 0 }}>
+          <div style={{ width: 32, height: 32, borderRadius: "50%", background: `linear-gradient(135deg,${S.green},#0EA5A4)`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 13, color: "#fff", flexShrink: 0 }}>
             {name.charAt(0).toUpperCase()}
           </div>
           <div style={{ minWidth: 0 }}>
@@ -48,7 +48,7 @@ function Sidebar({ active, setActive, name }: { active: NavSection; setActive: (
           </div>
         </div>
         <button onClick={() => signOut({ callbackUrl: "/" })}
-          style={{ width: "100%", background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.2)", color: S.red, borderRadius: 8, padding: "8px", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
+          style={{ width: "100%", background: "rgba(220,38,38,0.08)", border: "1px solid rgba(220,38,38,0.2)", color: S.red, borderRadius: 8, padding: "8px", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
           Sign Out
         </button>
       </div>
@@ -79,7 +79,7 @@ function DashboardOverview({ mealPlan, totalBurnt }: { mealPlan: any; totalBurnt
     <div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 28 }}>
         {stats.map(c => (
-          <div key={c.label} style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 14, padding: "18px 20px" }}>
+          <div key={c.label} style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
               <p style={{ fontSize: 12, color: S.muted, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.5px" }}>{c.label}</p>
               <span style={{ fontSize: 22 }}>{c.icon}</span>
@@ -91,31 +91,31 @@ function DashboardOverview({ mealPlan, totalBurnt }: { mealPlan: any; totalBurnt
       </div>
       {mealPlan && (
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 20 }}>
-          <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, padding: 24 }}>
+          <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, padding: 24, boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: S.text }}>🤖 Today's Plan — {mealPlan.category}</h2>
             {(mealPlan.meals || []).map((m: any) => (
-              <div key={m._id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 14px", background: "#1e293b", borderRadius: 10, border: `1px solid ${S.border}`, marginBottom: 8 }}>
+              <div key={m._id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 14px", background: S.panel, borderRadius: 10, border: `1px solid ${S.border}`, marginBottom: 8 }}>
                 <div>
                   <p style={{ fontSize: 14, fontWeight: 600, color: S.text }}>{m.name}</p>
                   <p style={{ fontSize: 12, color: S.muted }}>{m.calories} kcal · {m.protein}g P · {m.mealType}</p>
                 </div>
-                <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 999, fontWeight: 600, background: m.consumed ? "rgba(16,185,129,0.15)" : "rgba(100,116,139,0.15)", color: m.consumed ? S.green : S.muted }}>
+                <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 999, fontWeight: 600, background: m.consumed ? "rgba(0,200,150,0.12)" : "rgba(100,116,139,0.12)", color: m.consumed ? S.green : S.muted }}>
                   {m.consumed ? `✓ ${m.consumedAmount}%` : "Pending"}
                 </span>
               </div>
             ))}
           </div>
-          <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, padding: 24 }}>
+          <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, padding: 24, boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 20, color: S.text }}>🎯 Macro Progress</h2>
             {macros.map(m => {
               const pct = m.target > 0 ? Math.min(Math.round((m.current / m.target) * 100), 100) : 0;
               return (
                 <div key={m.name} style={{ marginBottom: 18 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: "#94a3b8" }}>{m.name}</span>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: "#475569" }}>{m.name}</span>
                     <span style={{ fontSize: 12, color: S.muted }}>{m.current}g / {m.target}g</span>
                   </div>
-                  <div style={{ height: 7, background: "#1e293b", borderRadius: 999, overflow: "hidden" }}>
+                  <div style={{ height: 7, background: "#F1F5F9", borderRadius: 999, overflow: "hidden" }}>
                     <div style={{ height: "100%", width: `${pct}%`, background: m.color, borderRadius: 999, transition: "width 0.8s ease" }} />
                   </div>
                 </div>
@@ -125,7 +125,7 @@ function DashboardOverview({ mealPlan, totalBurnt }: { mealPlan: any; totalBurnt
         </div>
       )}
       {!mealPlan && (
-        <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, padding: 40, textAlign: "center" }}>
+        <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, padding: 40, textAlign: "center", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
           <p style={{ fontSize: 48, marginBottom: 16 }}>🥗</p>
           <h3 style={{ fontSize: 18, fontWeight: 700, color: S.text, marginBottom: 8 }}>No meal plan for today</h3>
           <p style={{ fontSize: 14, color: S.muted }}>Go to the "AI Meal Plan" tab to generate your personalized nutrition plan.</p>
@@ -142,11 +142,13 @@ function MealPlanSection({ mealPlan, setMealPlan, refreshPlan }: { mealPlan: any
   const [showProfile, setShowProfile] = useState(!mealPlan);
   const [profile, setProfile] = useState({ age: "30", height: "170", weight: "70", gender: "male", glucoseLevel: "90", cholesterol: "180", allergies: "None", goals: "general health", dailyCaloricIntake: "2000", bloodPressure: "120", dietaryRestrictions: "None", preferredCuisine: "Indian", weeklyExerciseHours: "3" });
   const [consumeAmounts, setConsumeAmounts] = useState<Record<string, number>>({});
+  const [error, setError] = useState("");
 
   const bmi = profile.height && profile.weight ? (Number(profile.weight) / ((Number(profile.height) / 100) ** 2)).toFixed(1) : "—";
 
   const generatePlan = async () => {
     setLoading(true);
+    setError("");
     try {
       const res = await fetch("/api/ai/generate-plan", {
         method: "POST",
@@ -171,13 +173,16 @@ function MealPlanSection({ mealPlan, setMealPlan, refreshPlan }: { mealPlan: any
       if (data.mealPlan) {
         setMealPlan(data.mealPlan);
         setShowProfile(false);
+      } else {
+        setError(data.error || "Couldn't generate a plan. Please try again.");
       }
-    } catch (err) { console.error(err); }
+    } catch (err) { console.error(err); setError("Network error. Please try again."); }
     setLoading(false);
   };
 
   const modifyPlan = async () => {
     setModifying(true);
+    setError("");
     const consumedMeals = Object.entries(consumeAmounts)
       .filter(([_, amt]) => amt > 0)
       .map(([mealId, consumedAmount]) => ({ mealId, consumedAmount }));
@@ -194,18 +199,20 @@ function MealPlanSection({ mealPlan, setMealPlan, refreshPlan }: { mealPlan: any
       if (data.mealPlan) {
         setMealPlan(data.mealPlan);
         setConsumeAmounts({});
+      } else {
+        setError(data.error || "Couldn't update your plan. Please try again.");
       }
-    } catch (err) { console.error(err); }
+    } catch (err) { console.error(err); setError("Network error. Please try again."); }
     setModifying(false);
   };
 
-  const inputS = { width: "100%", background: "#1e293b", border: `1px solid ${S.border}`, borderRadius: 8, padding: "10px 12px", color: S.text, fontSize: 14, outline: "none" } as const;
+  const inputS = { width: "100%", background: S.panel, border: `1.5px solid ${S.border}`, borderRadius: 8, padding: "10px 12px", color: S.text, fontSize: 14, outline: "none" } as const;
 
   return (
     <div>
       {/* Health Profile Form */}
       {showProfile && (
-        <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, padding: 28, marginBottom: 20 }}>
+        <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, padding: 28, marginBottom: 20, boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
           <h3 style={{ fontSize: 18, fontWeight: 700, color: S.text, marginBottom: 4 }}>🧬 Health Profile</h3>
           <p style={{ fontSize: 13, color: S.muted, marginBottom: 20 }}>Enter your details for AI + ML-powered personalized meal plan (all 13 clinical features)</p>
 
@@ -223,8 +230,8 @@ function MealPlanSection({ mealPlan, setMealPlan, refreshPlan }: { mealPlan: any
           </div>
 
           {/* BMI Auto-calculated */}
-          <div style={{ marginBottom: 14, padding: "10px 14px", background: "rgba(16,185,129,0.08)", border: `1px solid rgba(16,185,129,0.2)`, borderRadius: 10, display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ fontSize: 13, color: S.green, fontWeight: 700 }}>📊 BMI: {bmi}</span>
+          <div style={{ marginBottom: 14, padding: "10px 14px", background: "rgba(0,200,150,0.08)", border: `1px solid rgba(0,200,150,0.25)`, borderRadius: 10, display: "flex", alignItems: "center", gap: 10 }}>
+            <span style={{ fontSize: 13, color: "#00897B", fontWeight: 700 }}>📊 BMI: {bmi}</span>
             <span style={{ fontSize: 11, color: S.muted }}>(auto-calculated from height & weight)</span>
           </div>
 
@@ -263,8 +270,13 @@ function MealPlanSection({ mealPlan, setMealPlan, refreshPlan }: { mealPlan: any
             </div>
             <div><label style={{ display: "block", fontSize: 11, color: S.muted, fontWeight: 600, marginBottom: 6, textTransform: "uppercase" }}>Goals (comma separated)</label><input value={profile.goals} onChange={e => setProfile({ ...profile, goals: e.target.value })} placeholder="e.g. weight loss, muscle gain" style={inputS} /></div>
           </div>
+          {error && (
+            <div style={{ background: "rgba(220,38,38,0.08)", border: "1px solid rgba(220,38,38,0.25)", borderRadius: 10, padding: "12px 14px", color: S.red, fontSize: 13, fontWeight: 500, marginBottom: 14 }}>
+              {error}
+            </div>
+          )}
           <button onClick={generatePlan} disabled={loading}
-            style={{ width: "100%", background: loading ? "#059669" : S.green, color: "#fff", border: "none", borderRadius: 10, padding: 14, fontWeight: 700, fontSize: 15, cursor: loading ? "wait" : "pointer", boxShadow: "0 0 20px rgba(16,185,129,0.25)" }}>
+            style={{ width: "100%", background: loading ? "#00A884" : S.green, color: "#fff", border: "none", borderRadius: 10, padding: 14, fontWeight: 700, fontSize: 15, cursor: loading ? "wait" : "pointer", boxShadow: "0 8px 20px rgba(0,200,150,0.25)" }}>
             {loading ? "⏳ ML classifying + AI generating..." : "🤖 Generate AI Meal Plan (ML + Groq)"}
           </button>
         </div>
@@ -272,24 +284,24 @@ function MealPlanSection({ mealPlan, setMealPlan, refreshPlan }: { mealPlan: any
 
       {/* Current Meal Plan */}
       {mealPlan && (
-        <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, padding: 28 }}>
+        <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, padding: 28, boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
             <div>
               <h3 style={{ fontSize: 18, fontWeight: 700, color: S.text }}>🍽️ Today's Meal Plan</h3>
               <p style={{ fontSize: 12, color: S.muted }}>Category: {mealPlan.category} · {mealPlan.totalCalories} kcal · {mealPlan.modified ? "📝 Modified" : "✨ Original"}</p>
             </div>
             <div style={{ display: "flex", gap: 8 }}>
-              <button onClick={() => setShowProfile(true)} style={{ background: "#1e293b", color: S.muted, border: `1px solid ${S.border}`, borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Regenerate</button>
+              <button onClick={() => setShowProfile(true)} style={{ background: S.panel, color: S.muted, border: `1px solid ${S.border}`, borderRadius: 8, padding: "6px 14px", fontSize: 12, fontWeight: 600, cursor: "pointer" }}>Regenerate</button>
             </div>
           </div>
 
           {(mealPlan.meals || []).map((m: any, index: number) => (
-            <div key={`${m.name}-${index}`} style={{ background: "#1e293b", border: `1px solid ${S.border}`, borderRadius: 12, padding: "16px 18px", marginBottom: 10 }}>
+            <div key={`${m.name}-${index}`} style={{ background: S.panel, border: `1px solid ${S.border}`, borderRadius: 12, padding: "16px 18px", marginBottom: 10 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-                    <span style={{ fontSize: 11, background: "rgba(6,182,212,0.15)", color: S.accent, padding: "2px 8px", borderRadius: 999, fontWeight: 600, textTransform: "capitalize" }}>{m.mealType}</span>
-                    {m.consumed && <span style={{ fontSize: 11, background: "rgba(16,185,129,0.15)", color: S.green, padding: "2px 8px", borderRadius: 999, fontWeight: 600 }}>✓ Consumed {m.consumedAmount}%</span>}
+                    <span style={{ fontSize: 11, background: "rgba(8,145,178,0.12)", color: S.accent, padding: "2px 8px", borderRadius: 999, fontWeight: 600, textTransform: "capitalize" }}>{m.mealType}</span>
+                    {m.consumed && <span style={{ fontSize: 11, background: "rgba(0,200,150,0.12)", color: S.green, padding: "2px 8px", borderRadius: 999, fontWeight: 600 }}>✓ Consumed {m.consumedAmount}%</span>}
                   </div>
                   <p style={{ fontSize: 15, fontWeight: 700, color: S.text, marginBottom: 4 }}>{m.name}</p>
                   <p style={{ fontSize: 12, color: S.muted }}>{m.description}</p>
@@ -313,9 +325,14 @@ function MealPlanSection({ mealPlan, setMealPlan, refreshPlan }: { mealPlan: any
             </div>
           ))}
 
+          {error && (
+            <div style={{ background: "rgba(220,38,38,0.08)", border: "1px solid rgba(220,38,38,0.25)", borderRadius: 10, padding: "12px 14px", color: S.red, fontSize: 13, fontWeight: 500, marginTop: 12 }}>
+              {error}
+            </div>
+          )}
           {Object.values(consumeAmounts).some(v => v > 0) && (
             <button onClick={modifyPlan} disabled={modifying}
-              style={{ width: "100%", marginTop: 12, background: modifying ? "#0891b2" : S.accent, color: "#fff", border: "none", borderRadius: 10, padding: 14, fontWeight: 700, fontSize: 14, cursor: modifying ? "wait" : "pointer" }}>
+              style={{ width: "100%", marginTop: 12, background: modifying ? "#0E7490" : S.accent, color: "#fff", border: "none", borderRadius: 10, padding: 14, fontWeight: 700, fontSize: 14, cursor: modifying ? "wait" : "pointer" }}>
               {modifying ? "⏳ AI is adjusting your plan..." : "📝 Log Consumption & Adjust Plan"}
             </button>
           )}
@@ -330,11 +347,13 @@ function RecipeSection() {
   const [ingredients, setIngredients] = useState("");
   const [loading, setLoading] = useState(false);
   const [recipe, setRecipe] = useState<any>(null);
+  const [error, setError] = useState("");
 
   const findRecipe = async () => {
     if (!ingredients.trim()) return;
     setLoading(true);
     setRecipe(null);
+    setError("");
     try {
       const res = await fetch("/api/ai/recipe-from-ingredients", {
         method: "POST",
@@ -343,32 +362,38 @@ function RecipeSection() {
       });
       const data = await res.json();
       if (data.recipe) setRecipe(data.recipe);
-    } catch (err) { console.error(err); }
+      else setError(data.error || "Couldn't generate a recipe. Please try again.");
+    } catch (err) { console.error(err); setError("Network error. Please try again."); }
     setLoading(false);
   };
 
   return (
     <div>
-      <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, padding: 28, marginBottom: 20 }}>
+      <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, padding: 28, marginBottom: 20, boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
         <h3 style={{ fontSize: 18, fontWeight: 700, color: S.text, marginBottom: 4 }}>👨‍🍳 Recipe from Ingredients</h3>
         <p style={{ fontSize: 13, color: S.muted, marginBottom: 20 }}>Enter the ingredients you have, and AI will create a recipe with nutrition info</p>
         <textarea value={ingredients} onChange={e => setIngredients(e.target.value)} placeholder="e.g. chicken, rice, broccoli, garlic, olive oil, lemon" rows={3}
-          style={{ width: "100%", background: "#1e293b", border: `1px solid ${S.border}`, borderRadius: 10, padding: "12px 14px", color: S.text, fontSize: 14, outline: "none", resize: "none", marginBottom: 14 }} />
+          style={{ width: "100%", background: S.panel, border: `1.5px solid ${S.border}`, borderRadius: 10, padding: "12px 14px", color: S.text, fontSize: 14, outline: "none", resize: "none", marginBottom: 14 }} />
         <button onClick={findRecipe} disabled={loading}
-          style={{ width: "100%", background: loading ? "#059669" : S.green, color: "#fff", border: "none", borderRadius: 10, padding: 14, fontWeight: 700, fontSize: 14, cursor: loading ? "wait" : "pointer" }}>
+          style={{ width: "100%", background: loading ? "#00A884" : S.green, color: "#fff", border: "none", borderRadius: 10, padding: 14, fontWeight: 700, fontSize: 14, cursor: loading ? "wait" : "pointer" }}>
           {loading ? "🍳 Cooking up a recipe..." : "🍳 Generate Recipe"}
         </button>
+        {error && (
+          <div style={{ background: "rgba(220,38,38,0.08)", border: "1px solid rgba(220,38,38,0.25)", borderRadius: 10, padding: "12px 14px", color: S.red, fontSize: 13, fontWeight: 500, marginTop: 14 }}>
+            {error}
+          </div>
+        )}
       </div>
 
       {recipe && (
-        <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, overflow: "hidden" }}>
-          <div style={{ padding: "18px 24px", background: "linear-gradient(135deg,#10b981,#059669)" }}>
+        <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
+          <div style={{ padding: "18px 24px", background: "linear-gradient(135deg,#00C896,#0EA5A4)" }}>
             <h3 style={{ fontSize: 20, fontWeight: 800, color: "#fff" }}>{recipe.name}</h3>
-            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.7)" }}>Serves {recipe.servings} · Prep {recipe.prepTime} · Cook {recipe.cookTime}</p>
+            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.8)" }}>Serves {recipe.servings} · Prep {recipe.prepTime} · Cook {recipe.cookTime}</p>
           </div>
           <div style={{ padding: 24 }}>
             {/* Nutrition */}
-            <div style={{ display: "flex", gap: 20, marginBottom: 20, paddingBottom: 20, borderBottom: `1px solid ${S.border}` }}>
+            <div style={{ display: "flex", gap: 20, marginBottom: 20, paddingBottom: 20, borderBottom: `1px solid #F1F5F9` }}>
               {[
                 { label: "Calories", val: recipe.nutrition?.calories, color: S.yellow },
                 { label: "Protein", val: `${recipe.nutrition?.protein}g`, color: S.green },
@@ -392,13 +417,13 @@ function RecipeSection() {
             <h4 style={{ fontSize: 14, fontWeight: 700, color: S.text, marginBottom: 10 }}>Instructions</h4>
             {(recipe.instructions || []).map((step: string, i: number) => (
               <div key={i} style={{ display: "flex", gap: 12, marginBottom: 12 }}>
-                <span style={{ width: 24, height: 24, borderRadius: "50%", background: "rgba(16,185,129,0.15)", color: S.green, fontSize: 12, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{i + 1}</span>
+                <span style={{ width: 24, height: 24, borderRadius: "50%", background: "rgba(0,200,150,0.12)", color: S.green, fontSize: 12, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{i + 1}</span>
                 <p style={{ fontSize: 13, color: S.muted, lineHeight: 1.6 }}>{step}</p>
               </div>
             ))}
             {recipe.tips && (
-              <div style={{ marginTop: 16, padding: "12px 16px", background: "rgba(16,185,129,0.08)", border: `1px solid rgba(16,185,129,0.2)`, borderRadius: 10 }}>
-                <p style={{ fontSize: 13, color: S.green, fontWeight: 600 }}>💡 Tip: {recipe.tips}</p>
+              <div style={{ marginTop: 16, padding: "12px 16px", background: "rgba(0,200,150,0.08)", border: `1px solid rgba(0,200,150,0.25)`, borderRadius: 10 }}>
+                <p style={{ fontSize: 13, color: "#00897B", fontWeight: 600 }}>💡 Tip: {recipe.tips}</p>
               </div>
             )}
           </div>
@@ -447,14 +472,14 @@ function ActivitySection() {
 
   return (
     <div>
-      <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, padding: 28, marginBottom: 20 }}>
+      <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, padding: 28, marginBottom: 20, boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
         <h3 style={{ fontSize: 18, fontWeight: 700, color: S.text, marginBottom: 4 }}>🏃 Activity Tracker</h3>
         <p style={{ fontSize: 13, color: S.muted, marginBottom: 20 }}>Select your activity and duration to calculate calories burnt</p>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10, marginBottom: 16 }}>
           {activities.map(a => (
             <button key={a.id} onClick={() => setSelected(a.id)}
-              style={{ padding: "14px 12px", borderRadius: 12, border: selected === a.id ? `2px solid ${S.green}` : `1px solid ${S.border}`, background: selected === a.id ? "rgba(16,185,129,0.1)" : "#1e293b", cursor: "pointer", textAlign: "center" }}>
+              style={{ padding: "14px 12px", borderRadius: 12, border: selected === a.id ? `2px solid ${S.green}` : `1px solid ${S.border}`, background: selected === a.id ? "rgba(0,200,150,0.08)" : S.panel, cursor: "pointer", textAlign: "center" }}>
               <span style={{ fontSize: 24, display: "block", marginBottom: 4 }}>{a.emoji}</span>
               <p style={{ fontSize: 12, fontWeight: 600, color: selected === a.id ? S.green : S.text }}>{a.label}</p>
               <p style={{ fontSize: 10, color: S.muted }}>MET: {a.met}</p>
@@ -466,26 +491,26 @@ function ActivitySection() {
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
             <label style={{ fontSize: 13, color: S.muted, flexShrink: 0 }}>Duration:</label>
             <input type="number" value={duration} onChange={e => setDuration(e.target.value)} min={1}
-              style={{ width: 80, background: "#1e293b", border: `1px solid ${S.border}`, borderRadius: 8, padding: "8px 12px", color: S.text, fontSize: 14, outline: "none", textAlign: "center" }} />
+              style={{ width: 80, background: S.panel, border: `1.5px solid ${S.border}`, borderRadius: 8, padding: "8px 12px", color: S.text, fontSize: 14, outline: "none", textAlign: "center" }} />
             <span style={{ fontSize: 13, color: S.muted }}>minutes</span>
           </div>
         )}
 
         <button onClick={logActivity} disabled={!selected || logging}
-          style={{ width: "100%", background: !selected ? "#1e293b" : logging ? "#059669" : S.green, color: !selected ? S.muted : "#fff", border: "none", borderRadius: 10, padding: 14, fontWeight: 700, fontSize: 14, cursor: !selected ? "default" : logging ? "wait" : "pointer" }}>
+          style={{ width: "100%", background: !selected ? "#F1F5F9" : logging ? "#00A884" : S.green, color: !selected ? S.muted : "#fff", border: "none", borderRadius: 10, padding: 14, fontWeight: 700, fontSize: 14, cursor: !selected ? "default" : logging ? "wait" : "pointer" }}>
           {logging ? "Logging..." : "⚡ Log Activity & Calculate Burn"}
         </button>
       </div>
 
       {/* Today's Summary */}
-      <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, padding: 24 }}>
+      <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, padding: 24, boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, color: S.text }}>Today's Activity Log</h3>
           <span style={{ fontSize: 22, fontWeight: 900, color: S.yellow }}>{totalBurnt} kcal burnt</span>
         </div>
         {todayLogs.length === 0 && <p style={{ fontSize: 14, color: S.muted, textAlign: "center", padding: 20 }}>No activities logged today.</p>}
         {todayLogs.map((log: any, i: number) => (
-          <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 0", borderBottom: i < todayLogs.length - 1 ? `1px solid ${S.border}` : "none" }}>
+          <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 0", borderBottom: i < todayLogs.length - 1 ? `1px solid #F1F5F9` : "none" }}>
             <div>
               <p style={{ fontSize: 14, fontWeight: 600, color: S.text }}>{log.activity}</p>
               <p style={{ fontSize: 12, color: S.muted }}>{log.duration} min · MET {log.met}</p>
@@ -506,6 +531,7 @@ function NutritionistSection() {
   const [bookForm, setBookForm] = useState({ date: "", time: "", notes: "" });
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetch("/api/nutritionists").then(r => r.json()).then(d => setNutritionists(d.nutritionists || []));
@@ -515,6 +541,7 @@ function NutritionistSection() {
   const bookAppointment = async () => {
     if (!booking || !bookForm.date || !bookForm.time) return;
     setSubmitting(true);
+    setError("");
     try {
       const res = await fetch("/api/appointments", {
         method: "POST",
@@ -528,8 +555,10 @@ function NutritionistSection() {
         setBookForm({ date: "", time: "", notes: "" });
         setSuccess(true);
         setTimeout(() => setSuccess(false), 3000);
+      } else {
+        setError(data.error || "Couldn't book the appointment. Please try again.");
       }
-    } catch (err) { console.error(err); }
+    } catch (err) { console.error(err); setError("Network error. Please try again."); }
     setSubmitting(false);
   };
 
@@ -538,7 +567,7 @@ function NutritionistSection() {
   return (
     <div>
       {success && (
-        <div style={{ background: "rgba(16,185,129,0.1)", border: `1px solid rgba(16,185,129,0.3)`, borderRadius: 12, padding: "14px 20px", marginBottom: 20, color: S.green, fontSize: 14, fontWeight: 600, textAlign: "center" }}>
+        <div style={{ background: "rgba(0,200,150,0.08)", border: `1px solid rgba(0,200,150,0.25)`, borderRadius: 12, padding: "14px 20px", marginBottom: 20, color: "#00897B", fontSize: 14, fontWeight: 600, textAlign: "center" }}>
           ✓ Appointment booked successfully! You'll receive a confirmation soon.
         </div>
       )}
@@ -547,13 +576,13 @@ function NutritionistSection() {
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 28 }}>
         {nutritionists.map((doc: any) => (
-          <div key={doc._id} style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, overflow: "hidden" }}>
+          <div key={doc._id} style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, overflow: "hidden", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
             <div style={{ padding: "20px 22px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
-                <div style={{ width: 48, height: 48, borderRadius: "50%", background: "rgba(16,185,129,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, flexShrink: 0 }}>{doc.emoji}</div>
+                <div style={{ width: 48, height: 48, borderRadius: "50%", background: "rgba(0,200,150,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, flexShrink: 0 }}>{doc.emoji}</div>
                 <div>
                   <p style={{ fontSize: 16, fontWeight: 700, color: S.text }}>{doc.name}</p>
-                  <p style={{ fontSize: 12, color: S.green, fontWeight: 600 }}>{doc.specialization}</p>
+                  <p style={{ fontSize: 12, color: "#00897B", fontWeight: 600 }}>{doc.specialization}</p>
                 </div>
               </div>
               <p style={{ fontSize: 13, color: S.muted, lineHeight: 1.6, marginBottom: 12 }}>{doc.bio}</p>
@@ -565,10 +594,10 @@ function NutritionistSection() {
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 14 }}>
                 {(doc.badges || []).map((b: string, i: number) => (
-                  <span key={i} style={{ fontSize: 11, padding: "3px 10px", borderRadius: 999, background: "rgba(16,185,129,0.1)", color: S.green, fontWeight: 600 }}>{b}</span>
+                  <span key={i} style={{ fontSize: 11, padding: "3px 10px", borderRadius: 999, background: "rgba(0,200,150,0.1)", color: "#00897B", fontWeight: 600 }}>{b}</span>
                 ))}
               </div>
-              <button onClick={() => setBooking(booking === doc._id ? null : doc._id)}
+              <button onClick={() => { setBooking(booking === doc._id ? null : doc._id); setError(""); }}
                 style={{ width: "100%", background: booking === doc._id ? S.accent : S.green, color: "#fff", border: "none", borderRadius: 10, padding: 12, fontWeight: 700, fontSize: 13, cursor: "pointer" }}>
                 {booking === doc._id ? "Cancel" : "📅 Book Appointment"}
               </button>
@@ -576,26 +605,31 @@ function NutritionistSection() {
 
             {/* Booking Form */}
             {booking === doc._id && (
-              <div style={{ padding: "0 22px 20px", borderTop: `1px solid ${S.border}`, paddingTop: 16 }}>
+              <div style={{ padding: "0 22px 20px", borderTop: `1px solid #F1F5F9`, paddingTop: 16 }}>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 10 }}>
                   <div>
                     <label style={{ display: "block", fontSize: 11, color: S.muted, fontWeight: 600, marginBottom: 6, textTransform: "uppercase" }}>Date</label>
                     <input type="date" value={bookForm.date} onChange={e => setBookForm({ ...bookForm, date: e.target.value })} min={new Date().toISOString().split("T")[0]}
-                      style={{ width: "100%", background: "#1e293b", border: `1px solid ${S.border}`, borderRadius: 8, padding: "8px 10px", color: S.text, fontSize: 13, outline: "none" }} />
+                      style={{ width: "100%", background: S.panel, border: `1.5px solid ${S.border}`, borderRadius: 8, padding: "8px 10px", color: S.text, fontSize: 13, outline: "none" }} />
                   </div>
                   <div>
                     <label style={{ display: "block", fontSize: 11, color: S.muted, fontWeight: 600, marginBottom: 6, textTransform: "uppercase" }}>Time</label>
                     <select value={bookForm.time} onChange={e => setBookForm({ ...bookForm, time: e.target.value })}
-                      style={{ width: "100%", background: "#1e293b", border: `1px solid ${S.border}`, borderRadius: 8, padding: "8px 10px", color: S.text, fontSize: 13, outline: "none", cursor: "pointer" }}>
+                      style={{ width: "100%", background: S.panel, border: `1.5px solid ${S.border}`, borderRadius: 8, padding: "8px 10px", color: S.text, fontSize: 13, outline: "none", cursor: "pointer" }}>
                       <option value="">Select time...</option>
                       {timeSlots.map(t => <option key={t} value={t}>{t}</option>)}
                     </select>
                   </div>
                 </div>
                 <textarea value={bookForm.notes} onChange={e => setBookForm({ ...bookForm, notes: e.target.value })} placeholder="Any specific concerns or notes..." rows={2}
-                  style={{ width: "100%", background: "#1e293b", border: `1px solid ${S.border}`, borderRadius: 8, padding: "8px 10px", color: S.text, fontSize: 13, outline: "none", resize: "none", marginBottom: 10 }} />
+                  style={{ width: "100%", background: S.panel, border: `1.5px solid ${S.border}`, borderRadius: 8, padding: "8px 10px", color: S.text, fontSize: 13, outline: "none", resize: "none", marginBottom: 10 }} />
+                {error && (
+                  <div style={{ background: "rgba(220,38,38,0.08)", border: "1px solid rgba(220,38,38,0.25)", borderRadius: 8, padding: "10px 12px", color: S.red, fontSize: 12, fontWeight: 500, marginBottom: 10 }}>
+                    {error}
+                  </div>
+                )}
                 <button onClick={bookAppointment} disabled={!bookForm.date || !bookForm.time || submitting}
-                  style={{ width: "100%", background: submitting ? "#059669" : S.green, color: "#fff", border: "none", borderRadius: 8, padding: 10, fontWeight: 700, fontSize: 13, cursor: submitting ? "wait" : "pointer" }}>
+                  style={{ width: "100%", background: submitting ? "#00A884" : S.green, color: "#fff", border: "none", borderRadius: 8, padding: 10, fontWeight: 700, fontSize: 13, cursor: submitting ? "wait" : "pointer" }}>
                   {submitting ? "Booking..." : "Confirm Booking"}
                 </button>
               </div>
@@ -606,16 +640,16 @@ function NutritionistSection() {
 
       {/* My Appointments */}
       {appointments.length > 0 && (
-        <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, padding: 24 }}>
+        <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, padding: 24, boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, color: S.text, marginBottom: 16 }}>📋 My Appointments</h3>
           {appointments.map((apt: any, i: number) => (
-            <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 0", borderBottom: i < appointments.length - 1 ? `1px solid ${S.border}` : "none" }}>
+            <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 0", borderBottom: i < appointments.length - 1 ? `1px solid #F1F5F9` : "none" }}>
               <div>
                 <p style={{ fontSize: 14, fontWeight: 600, color: S.text }}>{apt.nutritionistName}</p>
                 <p style={{ fontSize: 12, color: S.muted }}>{apt.date} · {apt.time}</p>
               </div>
               <span style={{ fontSize: 11, padding: "4px 12px", borderRadius: 999, fontWeight: 600, textTransform: "capitalize",
-                background: apt.status === "confirmed" ? "rgba(16,185,129,0.15)" : apt.status === "completed" ? "rgba(100,116,139,0.15)" : "rgba(245,158,11,0.15)",
+                background: apt.status === "confirmed" ? "rgba(0,200,150,0.12)" : apt.status === "completed" ? "rgba(100,116,139,0.12)" : "rgba(217,119,6,0.12)",
                 color: apt.status === "confirmed" ? S.green : apt.status === "completed" ? S.muted : S.yellow }}>
                 {apt.status}
               </span>
@@ -704,11 +738,11 @@ function RecipeBrowser({ dietCategory }: { dietCategory?: string }) {
   return (
     <div>
       {/* Filters */}
-      <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 16, padding: 20, marginBottom: 20 }}>
+      <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 16, padding: 20, marginBottom: 20, boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
           <div>
             <label style={{ fontSize: 11, color: S.muted, fontWeight: 600, textTransform: "uppercase", display: "block", marginBottom: 6 }}>Diet Type</label>
-            <select value={filterDiet} onChange={e => setFilterDiet(e.target.value)} style={{ background: "#1e293b", border: `1px solid ${S.border}`, borderRadius: 8, padding: "8px 12px", color: S.text, fontSize: 13, outline: "none", cursor: "pointer" }}>
+            <select value={filterDiet} onChange={e => setFilterDiet(e.target.value)} style={{ background: S.panel, border: `1.5px solid ${S.border}`, borderRadius: 8, padding: "8px 12px", color: S.text, fontSize: 13, outline: "none", cursor: "pointer" }}>
               <option value="">All Diets</option>
               <option value="Low_Carb">Low Carb</option>
               <option value="Low_Sodium">Low Sodium</option>
@@ -717,7 +751,7 @@ function RecipeBrowser({ dietCategory }: { dietCategory?: string }) {
           </div>
           <div>
             <label style={{ fontSize: 11, color: S.muted, fontWeight: 600, textTransform: "uppercase", display: "block", marginBottom: 6 }}>Type</label>
-            <select value={filterType} onChange={e => setFilterType(e.target.value)} style={{ background: "#1e293b", border: `1px solid ${S.border}`, borderRadius: 8, padding: "8px 12px", color: S.text, fontSize: 13, outline: "none", cursor: "pointer" }}>
+            <select value={filterType} onChange={e => setFilterType(e.target.value)} style={{ background: S.panel, border: `1.5px solid ${S.border}`, borderRadius: 8, padding: "8px 12px", color: S.text, fontSize: 13, outline: "none", cursor: "pointer" }}>
               <option value="">Veg & Non-Veg</option>
               <option value="Veg">🥬 Veg Only</option>
               <option value="Non-Veg">🍗 Non-Veg Only</option>
@@ -725,7 +759,7 @@ function RecipeBrowser({ dietCategory }: { dietCategory?: string }) {
           </div>
           <div>
             <label style={{ fontSize: 11, color: S.muted, fontWeight: 600, textTransform: "uppercase", display: "block", marginBottom: 6 }}>Cuisine</label>
-            <select value={filterCuisine} onChange={e => setFilterCuisine(e.target.value)} style={{ background: "#1e293b", border: `1px solid ${S.border}`, borderRadius: 8, padding: "8px 12px", color: S.text, fontSize: 13, outline: "none", cursor: "pointer" }}>
+            <select value={filterCuisine} onChange={e => setFilterCuisine(e.target.value)} style={{ background: S.panel, border: `1.5px solid ${S.border}`, borderRadius: 8, padding: "8px 12px", color: S.text, fontSize: 13, outline: "none", cursor: "pointer" }}>
               <option value="">All Cuisines</option>
               <option value="Indian">Indian</option>
               <option value="South Indian">South Indian</option>
@@ -740,8 +774,8 @@ function RecipeBrowser({ dietCategory }: { dietCategory?: string }) {
           </div>
         </div>
         {dietCategory && (
-          <div style={{ marginTop: 12, padding: "8px 14px", background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)", borderRadius: 8 }}>
-            <span style={{ fontSize: 12, color: S.green, fontWeight: 600 }}>🤖 ML recommended diet: {dietCategory}  </span>
+          <div style={{ marginTop: 12, padding: "8px 14px", background: "rgba(0,200,150,0.08)", border: "1px solid rgba(0,200,150,0.25)", borderRadius: 8 }}>
+            <span style={{ fontSize: 12, color: "#00897B", fontWeight: 600 }}>🤖 ML recommended diet: {dietCategory}  </span>
             <button onClick={() => setFilterDiet(dietCategory)} style={{ fontSize: 12, color: S.accent, fontWeight: 600, background: "none", border: "none", cursor: "pointer", textDecoration: "underline" }}>Filter by this</button>
           </div>
         )}
@@ -752,24 +786,26 @@ function RecipeBrowser({ dietCategory }: { dietCategory?: string }) {
       {/* Recipe Grid */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
         {recipes.map((r: any) => (
-          <div key={r._id} onClick={() => setSelectedRecipe(r)} style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 14, padding: 20, cursor: "pointer", transition: "border-color 0.2s" }}
+          <div key={r._id} onClick={() => setSelectedRecipe(r)} style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 14, padding: 20, cursor: "pointer", transition: "border-color 0.2s, box-shadow 0.2s", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = S.green)}
-            onMouseLeave={e => (e.currentTarget.style.borderColor = S.border)}>
+            onMouseLeave={e => (e.currentTarget.style.borderColor = "#F1F5F9")}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
               <h4 style={{ fontSize: 15, fontWeight: 700, color: S.text, flex: 1 }}>{r.name}</h4>
-              <span style={{ fontSize: 11, padding: "3px 8px", borderRadius: 999, fontWeight: 600, flexShrink: 0, marginLeft: 8, background: r.type === "Veg" ? "rgba(16,185,129,0.15)" : "rgba(239,68,68,0.15)", color: r.type === "Veg" ? S.green : S.red }}>{r.type}</span>
+              <span style={{ fontSize: 11, padding: "3px 8px", borderRadius: 999, fontWeight: 600, flexShrink: 0, marginLeft: 8, background: r.type === "Veg" ? "rgba(0,200,150,0.12)" : "rgba(220,38,38,0.1)", color: r.type === "Veg" ? S.green : S.red }}>{r.type}</span>
             </div>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 10 }}>
-              {r.dietType && <span style={{ fontSize: 10, padding: "2px 8px", borderRadius: 999, background: "rgba(6,182,212,0.12)", color: S.accent, fontWeight: 600 }}>{r.dietType.replace("_", " ")}</span>}
-              <span style={{ fontSize: 10, padding: "2px 8px", borderRadius: 999, background: "rgba(100,116,139,0.15)", color: S.muted, fontWeight: 600 }}>{r.cuisine}</span>
+              {(r.dietType || []).map((dt: string) => (
+                <span key={dt} style={{ fontSize: 10, padding: "2px 8px", borderRadius: 999, background: "rgba(8,145,178,0.12)", color: S.accent, fontWeight: 600 }}>{dt.replace("_", " ")}</span>
+              ))}
+              <span style={{ fontSize: 10, padding: "2px 8px", borderRadius: 999, background: "rgba(100,116,139,0.12)", color: S.muted, fontWeight: 600 }}>{r.cuisine}</span>
             </div>
             <div style={{ display: "flex", gap: 12, marginBottom: 8 }}>
               <span style={{ fontSize: 12, color: S.yellow, fontWeight: 600 }}>{r.nutritionPer100g?.caloriesKcal} kcal</span>
               <span style={{ fontSize: 12, color: S.green, fontWeight: 600 }}>{r.nutritionPer100g?.proteinG}g P</span>
-              <span style={{ fontSize: 12, color: S.accent, fontWeight: 600 }}>{r.nutritionPer100g?.carbsG}g C</span>
+              <span style={{ fontSize: 12, color: S.accent, fontWeight: 600 }}>{r.nutritionPer100g?.carbohydratesG}g C</span>
               <span style={{ fontSize: 12, color: S.purple, fontWeight: 600 }}>{r.nutritionPer100g?.fatG}g F</span>
             </div>
-            <p style={{ fontSize: 11, color: S.muted }}>⏱ {r.cookTime} min · {(r.ingredients || []).length} ingredients</p>
+            <p style={{ fontSize: 11, color: S.muted }}>⏱ {r.cookingTimeMinutes} min · {(r.ingredients || []).length} ingredients</p>
           </div>
         ))}
       </div>
@@ -778,21 +814,21 @@ function RecipeBrowser({ dietCategory }: { dietCategory?: string }) {
 
       {/* Recipe Detail Modal */}
       {selectedRecipe && (
-        <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.7)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999, padding: 20 }} onClick={() => setSelectedRecipe(null)}>
-          <div style={{ background: S.card, border: `1px solid ${S.border}`, borderRadius: 20, maxWidth: 600, width: "100%", maxHeight: "85vh", overflow: "auto", padding: 0 }} onClick={e => e.stopPropagation()}>
+        <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(15,23,42,0.6)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 999, padding: 20 }} onClick={() => setSelectedRecipe(null)}>
+          <div style={{ background: S.card, border: `1px solid #F1F5F9`, borderRadius: 20, maxWidth: 600, width: "100%", maxHeight: "85vh", overflow: "auto", padding: 0, boxShadow: "0 24px 60px rgba(0,0,0,0.25)" }} onClick={e => e.stopPropagation()}>
             {/* Header */}
-            <div style={{ padding: "20px 24px", background: "linear-gradient(135deg,#10b981,#059669)", borderRadius: "20px 20px 0 0", position: "relative" }}>
-              <button onClick={() => setSelectedRecipe(null)} style={{ position: "absolute", top: 14, right: 16, background: "rgba(255,255,255,0.2)", border: "none", borderRadius: 8, width: 28, height: 28, fontSize: 14, cursor: "pointer", color: "#fff" }}>✕</button>
+            <div style={{ padding: "20px 24px", background: "linear-gradient(135deg,#00C896,#0EA5A4)", borderRadius: "20px 20px 0 0", position: "relative" }}>
+              <button onClick={() => setSelectedRecipe(null)} style={{ position: "absolute", top: 14, right: 16, background: "rgba(255,255,255,0.25)", border: "none", borderRadius: 8, width: 28, height: 28, fontSize: 14, cursor: "pointer", color: "#fff" }}>✕</button>
               <h3 style={{ fontSize: 22, fontWeight: 800, color: "#fff", marginBottom: 4 }}>{selectedRecipe.name}</h3>
               <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                <span style={{ fontSize: 12, color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>{selectedRecipe.type} · {selectedRecipe.cuisine} · ⏱ {selectedRecipe.cookingTimeMinutes} min</span>
+                <span style={{ fontSize: 12, color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>{selectedRecipe.type} · {selectedRecipe.cuisine} · ⏱ {selectedRecipe.cookingTimeMinutes} min</span>
               </div>
             </div>
             <div style={{ padding: 24 }}>
               {/* Nutrition */}
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10, marginBottom: 20 }}>
                 {[{ l: "Calories", v: selectedRecipe.nutritionPer100g?.caloriesKcal, u: "kcal", c: S.yellow }, { l: "Protein", v: selectedRecipe.nutritionPer100g?.proteinG, u: "g", c: S.green }, { l: "Carbs", v: selectedRecipe.nutritionPer100g?.carbohydratesG, u: "g", c: S.accent }, { l: "Fat", v: selectedRecipe.nutritionPer100g?.fatG, u: "g", c: S.purple }, { l: "Sugar", v: selectedRecipe.nutritionPer100g?.sugarG, u: "g", c: S.red }, { l: "Sodium", v: selectedRecipe.nutritionPer100g?.sodiumMg, u: "mg", c: S.muted }].map(n => (
-                  <div key={n.l} style={{ background: "#1e293b", borderRadius: 10, padding: "10px 14px", textAlign: "center" }}>
+                  <div key={n.l} style={{ background: S.panel, borderRadius: 10, padding: "10px 14px", textAlign: "center" }}>
                     <p style={{ fontSize: 18, fontWeight: 800, color: n.c }}>{n.v}{n.u !== "kcal" ? n.u : ""}</p>
                     <p style={{ fontSize: 10, color: S.muted, textTransform: "uppercase" }}>{n.l}{n.u === "kcal" ? " (kcal)" : ""}</p>
                   </div>
@@ -803,21 +839,21 @@ function RecipeBrowser({ dietCategory }: { dietCategory?: string }) {
               <h4 style={{ fontSize: 14, fontWeight: 700, color: S.text, marginBottom: 10 }}>🧂 Ingredients</h4>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 20 }}>
                 {(selectedRecipe.ingredients || []).map((ing: any, i: number) => (
-                  <span key={i} style={{ fontSize: 12, padding: "5px 12px", borderRadius: 999, background: "#1e293b", border: `1px solid ${S.border}`, color: S.text, fontWeight: 500 }}>{ing.quantity} {ing.unit} {ing.name}</span>
+                  <span key={i} style={{ fontSize: 12, padding: "5px 12px", borderRadius: 999, background: S.panel, border: `1px solid ${S.border}`, color: S.text, fontWeight: 500 }}>{ing.quantity} {ing.unit} {ing.name}</span>
                 ))}
               </div>
               {/* Steps */}
               <h4 style={{ fontSize: 14, fontWeight: 700, color: S.text, marginBottom: 10 }}>📝 Cooking Steps</h4>
               {(selectedRecipe.recipeSteps || []).map((step: string, i: number) => (
                 <div key={i} style={{ display: "flex", gap: 10, marginBottom: 10 }}>
-                  <span style={{ width: 22, height: 22, borderRadius: "50%", background: "rgba(16,185,129,0.15)", color: S.green, fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{i + 1}</span>
+                  <span style={{ width: 22, height: 22, borderRadius: "50%", background: "rgba(0,200,150,0.12)", color: S.green, fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{i + 1}</span>
                   <p style={{ fontSize: 13, color: S.muted, lineHeight: 1.5 }}>{step}</p>
                 </div>
               ))}
               {/* Tags */}
               {(selectedRecipe.tags || []).length > 0 && (
                 <div style={{ display: "flex", gap: 6, marginTop: 16 }}>
-                  {(selectedRecipe.tags || []).map((t: string) => <span key={t} style={{ fontSize: 11, padding: "3px 10px", borderRadius: 999, background: "rgba(16,185,129,0.1)", color: S.green, fontWeight: 600 }}>#{t}</span>)}
+                  {(selectedRecipe.tags || []).map((t: string) => <span key={t} style={{ fontSize: 11, padding: "3px 10px", borderRadius: 999, background: "rgba(0,200,150,0.1)", color: "#00897B", fontWeight: 600 }}>#{t}</span>)}
                 </div>
               )}
             </div>

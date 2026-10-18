@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nutrilife-config
+  namespace: nutrilife
+data:
+  # Externally-reachable URL the browser uses - matches the app Service's
+  # exposed port (see app.yaml). Change this if you expose the app
+  # differently (Ingress host, cloud LoadBalancer IP, etc.).
+  NEXTAUTH_URL: "http://localhost:3000"
+  # In-cluster DNS name for the ml-service Service, not localhost:8000 -
+  # same reasoning as ML_SERVICE_URL in docker-compose.yml.
+  ML_SERVICE_URL: "http://ml-service:8000"

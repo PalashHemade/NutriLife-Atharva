@@ -1,0 +1,8 @@
+__pycache__
+*.pyc
+.venv
+venv
+
+# force a fresh, reproducible training run at build time rather than
+# shipping whatever a local dev happened to have lying around
+*.pkl

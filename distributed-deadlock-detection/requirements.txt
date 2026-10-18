@@ -1,0 +1,10 @@
+# No third-party dependencies - this project uses only the Python 3
+# standard library (socket, threading, json, argparse, dataclasses, time,
+# logging). Just run it with:
+#
+#   python node.py --id 1 --port 5001 --peer 2:localhost:5002
+#
+# Requires Python 3.8+ (every file uses `from __future__ import
+# annotations`, so the `X | None` / `dict[str, int]` style type hints
+# throughout are never evaluated at runtime and don't require a newer
+# interpreter). Tested on Python 3.11.

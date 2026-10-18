@@ -1,90 +1,68 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-export interface IRecipe extends Document {
+export interface IIngredient {
   name: string;
-  type: string; // breakfast, lunch, dinner, snack
-  dietType: string; // Balanced, Low_Carb, Low_Sodium, etc.
-  ingredients: string[];
-  instructions: string;
-  cuisine?: string; // Indian, Chinese, etc.
-  nutritionPer100g: {
-    caloriesKcal: number;
-    proteinG: number;
-    carbsG: number;
-    fatG: number;
-    fiberG?: number;
-    sugarG?: number;
-    sodiumMg?: number;
-  };
-  prepTime: number; // minutes
-  cookTime: number; // minutes
-  servings: number;
-  createdAt: Date;
-  updatedAt: Date;
+  quantity: number;
+  unit: string;
 }
 
-const RecipeSchema: Schema = new Schema(
+export interface INutrition {
+  caloriesKcal: number;
+  proteinG: number;
+  fatG: number;
+  carbohydratesG: number;
+  sugarG: number;
+  sodiumMg: number;
+}
+
+export interface IRecipe extends Document {
+  name: string;
+  type: "Veg" | "Non-Veg";
+  dietType: string[]; // Low_Carb, Low_Sodium, Balanced
+  cuisine?: string;
+  cookingTimeMinutes?: number;
+  nutritionPer100g: INutrition;
+  ingredients: IIngredient[];
+  recipeSteps: string[];
+  tags: string[];
+  createdAt: Date;
+}
+
+const IngredientSchema: Schema = new Schema(
   {
-    name: {
-      type: String,
-      required: true,
-    },
-    type: {
-      type: String,
-      required: true,
-      enum: ["breakfast", "lunch", "dinner", "snack"],
-    },
-    dietType: {
-      type: String,
-      required: true,
-    },
-    ingredients: [{
-      type: String,
-    }],
-    instructions: {
-      type: String,
-      required: true,
-    },
-    cuisine: {
-      type: String,
-    },
-    nutritionPer100g: {
-      caloriesKcal: {
-        type: Number,
-        required: true,
-      },
-      proteinG: {
-        type: Number,
-        required: true,
-      },
-      carbsG: {
-        type: Number,
-        required: true,
-      },
-      fatG: {
-        type: Number,
-        required: true,
-      },
-      fiberG: Number,
-      sugarG: Number,
-      sodiumMg: Number,
-    },
-    prepTime: {
-      type: Number,
-      required: true,
-    },
-    cookTime: {
-      type: Number,
-      required: true,
-    },
-    servings: {
-      type: Number,
-      required: true,
-    },
+    name: String,
+    quantity: Number,
+    unit: String,
   },
-  {
-    timestamps: true,
-  }
+  { _id: false }
 );
+
+const NutritionSchema: Schema = new Schema(
+  {
+    caloriesKcal: Number,
+    proteinG: Number,
+    fatG: Number,
+    carbohydratesG: Number,
+    sugarG: Number,
+    sodiumMg: Number,
+  },
+  { _id: false }
+);
+
+const RecipeSchema: Schema = new Schema({
+  name: { type: String, required: true },
+  type: { type: String, enum: ["Veg", "Non-Veg"], required: true },
+  dietType: [{ type: String, enum: ["Low_Carb", "Low_Sodium", "Balanced"] }],
+  cuisine: String,
+  cookingTimeMinutes: Number,
+  nutritionPer100g: NutritionSchema,
+  ingredients: [IngredientSchema],
+  recipeSteps: [String],
+  tags: [String],
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
 export default mongoose.models.Recipe || mongoose.model<IRecipe>("Recipe", RecipeSchema);

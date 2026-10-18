@@ -64,7 +64,7 @@ export default function Nutritionists() {
 
                 <p style={{ fontSize: '0.75rem', color: '#CBD5E1', marginBottom: '1rem' }}>{doc.reviews} reviews</p>
 
-                <Link href="/book"
+                <Link href="/register"
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.625rem', fontSize: '0.875rem', fontWeight: 600, color: '#fff', background: 'linear-gradient(135deg,#00C896,#0EA5A4)', borderRadius: '0.75rem', boxShadow: '0 4px 12px rgba(0,200,150,0.25)', textDecoration: 'none', transition: 'transform 0.2s, box-shadow 0.2s' }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.03)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 20px rgba(0,200,150,0.4)'; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 12px rgba(0,200,150,0.25)'; }}>

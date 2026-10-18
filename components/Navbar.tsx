@@ -7,8 +7,8 @@ import { Leaf, Menu, X, ArrowRight } from 'lucide-react';
 
 const links = [
   { name: 'Services', href: '/#services' },
+  { name: 'How It Works', href: '/#how-it-works' },
   { name: 'Nutritionists', href: '/#nutritionists' },
-  { name: 'Book Appointment', href: '/book' },
 ];
 
 export default function Navbar() {
@@ -59,9 +59,9 @@ export default function Navbar() {
             <Link href="/login" style={{ fontSize: '0.875rem', fontWeight: 600, color: '#00C896', textDecoration: 'none', padding: '0.5rem 1rem', borderRadius: '9999px', transition: 'background 0.2s', border: '1px solid transparent' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(0,200,150,0.1)'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}>
-              Diet Consultant Login
+              Sign In
             </Link>
-            <Link href="/book" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.25rem', background: 'linear-gradient(135deg,#00C896,#0EA5A4)', color: '#fff', fontSize: '0.875rem', fontWeight: 600, borderRadius: '9999px', boxShadow: '0 4px 14px rgba(0,200,150,0.3)', textDecoration: 'none', transition: 'transform 0.2s, box-shadow 0.2s' }}
+            <Link href="/register" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.25rem', background: 'linear-gradient(135deg,#00C896,#0EA5A4)', color: '#fff', fontSize: '0.875rem', fontWeight: 600, borderRadius: '9999px', boxShadow: '0 4px 14px rgba(0,200,150,0.3)', textDecoration: 'none', transition: 'transform 0.2s, box-shadow 0.2s' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 20px rgba(0,200,150,0.4)'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 14px rgba(0,200,150,0.3)'; }}>
               Get Started <ArrowRight style={{ width: '1rem', height: '1rem' }} />
@@ -93,9 +93,9 @@ export default function Navbar() {
               <div style={{ height: '1px', background: '#E2E8F0', margin: '0.5rem 0' }} />
               <Link href="/login" onClick={() => setMobileMenu(false)}
                 style={{ display: 'block', padding: '0.75rem', fontSize: '1rem', fontWeight: 600, color: '#00C896', textDecoration: 'none', textAlign: 'center' }}>
-                Diet Consultant Login
+                Sign In
               </Link>
-              <Link href="/book" onClick={() => setMobileMenu(false)}
+              <Link href="/register" onClick={() => setMobileMenu(false)}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.875rem', background: 'linear-gradient(135deg,#00C896,#0EA5A4)', color: '#fff', fontSize: '1rem', fontWeight: 600, borderRadius: '0.75rem', textDecoration: 'none' }}>
                 Get Started <ArrowRight style={{ width: '1rem', height: '1rem' }} />
               </Link>

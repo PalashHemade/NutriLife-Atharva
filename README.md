@@ -1,6 +1,6 @@
 # 🥗 NutriLife — AI-Powered Nutrition & Diet Recommendation Platform
 
-> A full-stack intelligent nutrition platform that combines **Machine Learning** (Random Forest with GridSearchCV) for clinical diet classification with **Generative AI** (Groq/LLaMA 3.3 70B) for personalized meal planning, recipe generation, and adaptive dietary management.
+> A full-stack intelligent nutrition platform that combines **Machine Learning** (Random Forest with GridSearchCV) for clinical diet classification with **Generative AI** (Groq / `openai/gpt-oss-120b`) for personalized meal planning, recipe generation, and adaptive dietary management.
 
 ---
 
@@ -9,6 +9,7 @@
 - [Overview](#-overview)
 - [Key Features](#-key-features)
 - [System Architecture](#-system-architecture)
+- [🌐 NutriLife as a Distributed System](DISTRIBUTED_SYSTEMS.md) — theory + how this project actually implements it
 - [Tech Stack](#-tech-stack)
 - [ML Model Details](#-ml-model-details)
 - [Recipe Database](#-recipe-database)
@@ -37,7 +38,7 @@ FastAPI ML Service classifies into diet category
         ↓
 MongoDB Recipe Database queried for matching recipes
         ↓
-Groq AI (LLaMA 3.3 70B) generates 4-meal daily plan
+Groq AI (openai/gpt-oss-120b) generates 4-meal daily plan
   using real recipes as context
         ↓
 User logs consumption → AI recalculates remaining meals
@@ -54,7 +55,7 @@ Activity tracker calculates net calories (eaten − burnt)
 | # | Feature | How It Works | Technology |
 |---|---------|-------------|------------|
 | 1 | **ML Diet Classification** | Classifies users into one of 3 diet categories (Balanced, Low_Carb, Low_Sodium) based on 13 clinical features using an optimized Random Forest pipeline with GridSearchCV hyperparameter tuning | scikit-learn, FastAPI |
-| 2 | **AI Meal Plan Generation** | After ML classification, fetches matching recipes from MongoDB, then Groq AI generates a 4-meal daily plan (breakfast, lunch, dinner, snack) with exact macros per meal | Groq SDK, LLaMA 3.3 70B |
+| 2 | **AI Meal Plan Generation** | After ML classification, fetches matching recipes from MongoDB, then Groq AI generates a 4-meal daily plan (breakfast, lunch, dinner, snack) with exact macros per meal | Groq SDK, openai/gpt-oss-120b |
 | 3 | **Adaptive Plan Modification** | User logs what percentage of each meal they consumed → AI recalculates the remaining meals to ensure daily caloric and macro targets are still met | Groq SDK |
 | 4 | **Recipe from Ingredients** | User enters available ingredients → AI generates a complete recipe with cooking steps, servings, prep time, and full nutritional breakdown | Groq SDK |
 | 5 | **Activity Calorie Tracking** | 15 activities with scientifically-established MET values — calculates calories burnt using the formula: `MET × Weight(kg) × Duration(hours)` | MET-based calculation |
@@ -125,15 +126,15 @@ Activity tracker calculates net calories (eaten − burnt)
 │                              activity-calories                    │
 └──────┬───────────────────────────┬────────────────────┬──────────┘
        │                           │                    │
-┌──────▼──────────┐  ┌─────────────▼───────┐  ┌────────▼──────────┐
-│    MongoDB      │  │    Groq AI API      │  │   FastAPI ML      │
-│   (Mongoose)    │  │   (LLaMA 3.3 70B)  │  │    Service        │
-│                 │  │                     │  │   (Port 8000)     │
-│ Collections:    │  │ • Generate plans    │  │                   │
-│ • users         │  │ • Modify plans      │  │ nutrilife_        │
-│ • mealplans     │  │ • Create recipes    │  │   pipeline.pkl    │
-│ • activitylogs  │  │ • Structured JSON   │  │ target_           │
-│ • recipes       │  │   responses         │  │   encoder.pkl     │
+┌──────▼──────────┐  ┌───────────────────────┐  ┌────────▼──────────┐
+│    MongoDB      │  │      Groq AI API       │  │   FastAPI ML      │
+│   (Mongoose)    │  │  (openai/gpt-oss-120b)  │  │    Service        │
+│                 │  │                         │  │   (Port 8000)     │
+│ Collections:    │  │ • Generate plans        │  │                   │
+│ • users         │  │ • Modify plans          │  │ nutrilife_        │
+│ • mealplans     │  │ • Create recipes        │  │   pipeline.pkl    │
+│ • activitylogs  │  │ • Structured JSON       │  │ target_           │
+│ • recipes       │  │   responses             │  │   encoder.pkl     │
 │ • nutritionists │  │                     │  │                   │
 │ • appointments  │  └─────────────────────┘  │ Random Forest     │
 │                 │                           │ + GridSearchCV     │
@@ -554,6 +555,42 @@ Nutrilife/
 
 ---
 
+## 🐳 Quick Start with Docker
+
+The fastest way to run everything (Next.js app + the ML service, including
+training the model) is Docker Compose. MongoDB is a cloud **Atlas** cluster,
+not containerized — both the host and the containers reach it over the
+internet using the same connection string.
+
+1. Create a `.env` file in the project root with:
+   ```env
+   NEXTAUTH_SECRET=your-secret-here
+   NEXTAUTH_URL=http://localhost:3000
+   MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/nutrilife?retryWrites=true&w=majority
+   GROQ_API_KEY=your-groq-api-key
+   ML_SERVICE_URL=http://localhost:8000
+   ```
+   Make sure your Atlas cluster's Network Access list allows the IP you're
+   running from (or `0.0.0.0/0` for "allow from anywhere," fine for a demo
+   cluster). `ML_SERVICE_URL` here is only used when running outside
+   Docker — the containers use their own value, set in `docker-compose.yml`,
+   to reach each other over the compose network.
+2. Run:
+   ```bash
+   docker compose up --build
+   ```
+   This builds the ML service image (training the Random Forest model at
+   build time, so it's ready immediately), waits for it to report healthy,
+   then builds and starts the app, which connects straight to Atlas. Once
+   both containers are up:
+   - App: http://localhost:3000
+   - ML service: http://localhost:8000
+
+Logs for both services stream to the same terminal, prefixed by service
+name. Stop everything with `Ctrl+C`, or `docker compose down`.
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -653,7 +690,7 @@ You should see:
 | `NEXTAUTH_SECRET` | ✅ | JWT encryption secret (any random string) | `mysecretkey123` |
 | `NEXTAUTH_URL` | ✅ | Application base URL | `http://localhost:3000` |
 | `MONGODB_URI` | ✅ | MongoDB connection string | `mongodb://localhost:27017/nutrilife` |
-| `GROQ_API_KEY` | ✅ | Groq API key for LLaMA 3.3 70B access | `gsk_...` |
+| `GROQ_API_KEY` | ✅ | Groq API key for openai/gpt-oss-120b access | `gsk_...` |
 | `ML_SERVICE_URL` | ✅ | FastAPI ML service URL | `http://localhost:8000` |
 
 ---

@@ -34,9 +34,10 @@ Respond ONLY with valid JSON, no markdown:
 
     const chatCompletion = await groq.chat.completions.create({
       messages: [{ role: "user", content: prompt }],
-      model: "llama-3.3-70b-versatile",
+      model: "openai/gpt-oss-120b",
       temperature: 0.8,
       max_tokens: 1024,
+      response_format: { type: "json_object" },
     });
 
     const aiResponse = chatCompletion.choices[0]?.message?.content || "";

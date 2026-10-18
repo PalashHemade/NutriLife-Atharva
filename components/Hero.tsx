@@ -2,12 +2,12 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Play, Sparkles, TrendingUp, Users, Award } from 'lucide-react';
+import { ArrowRight, ListChecks, Sparkles, FlaskConical, BookOpen } from 'lucide-react';
 
 const stats = [
-  { icon: Users, value: '50K+', label: 'Active Users' },
-  { icon: Award, value: '200+', label: 'Expert Nutritionists' },
-  { icon: TrendingUp, value: '95%', label: 'Success Rate' },
+  { icon: FlaskConical, value: '13', label: 'Clinical Biomarkers Used' },
+  { icon: ListChecks, value: '3', label: 'ML-Matched Diet Types' },
+  { icon: BookOpen, value: '30+', label: 'Curated Recipes' },
 ];
 
 export default function Hero() {
@@ -47,16 +47,16 @@ export default function Hero() {
             {/* Buttons */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.45 }}
               style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-              <Link href="/book" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 2rem', color: '#fff', fontWeight: 600, fontSize: '1rem', background: 'linear-gradient(135deg, #00C896, #0EA5A4)', borderRadius: '1rem', boxShadow: '0 10px 30px rgba(0,200,150,0.35)', textDecoration: 'none', transition: 'transform 0.2s, box-shadow 0.2s' }}
+              <Link href="/register" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '1rem 2rem', color: '#fff', fontWeight: 600, fontSize: '1rem', background: 'linear-gradient(135deg, #00C896, #0EA5A4)', borderRadius: '1rem', boxShadow: '0 10px 30px rgba(0,200,150,0.35)', textDecoration: 'none', transition: 'transform 0.2s, box-shadow 0.2s' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.04)'; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}>
                 Get Started Free <ArrowRight style={{ width: '1.25rem', height: '1.25rem' }} />
               </Link>
-              <Link href="/book" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 2rem', color: '#334155', fontWeight: 600, fontSize: '1rem', background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(8px)', border: '1px solid #E2E8F0', borderRadius: '1rem', textDecoration: 'none', transition: 'border-color 0.2s, color 0.2s' }}>
+              <Link href="/#how-it-works" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 2rem', color: '#334155', fontWeight: 600, fontSize: '1rem', background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(8px)', border: '1px solid #E2E8F0', borderRadius: '1rem', textDecoration: 'none', transition: 'border-color 0.2s, color 0.2s' }}>
                 <div style={{ width: '2rem', height: '2rem', borderRadius: '50%', background: 'linear-gradient(135deg, #00C896, #0EA5A4)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Play style={{ width: '0.75rem', height: '0.75rem', fill: '#fff', color: '#fff', marginLeft: '2px' }} />
+                  <Sparkles style={{ width: '0.875rem', height: '0.875rem', color: '#fff' }} />
                 </div>
-                Book Consultation
+                See How It Works
               </Link>
             </motion.div>
 
@@ -121,10 +121,10 @@ export default function Hero() {
               {/* Floating badge 2 */}
               <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 3.5, repeat: Infinity, delay: 1 }}
                 style={{ position: 'absolute', bottom: '-1rem', right: '-1.5rem', background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(12px)', borderRadius: '1rem', padding: '0.75rem 1rem', boxShadow: '0 8px 32px rgba(0,0,0,0.12)', border: '1px solid rgba(255,255,255,0.9)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ fontSize: '1.25rem' }}>⭐</span>
+                <span style={{ fontSize: '1.25rem' }}>🧬</span>
                 <div>
-                  <p style={{ fontSize: '0.75rem', fontWeight: 700, color: '#1E293B' }}>4.9/5 Rating</p>
-                  <p style={{ fontSize: '0.7rem', color: '#64748B' }}>12K+ reviews</p>
+                  <p style={{ fontSize: '0.75rem', fontWeight: 700, color: '#1E293B' }}>ML + AI Powered</p>
+                  <p style={{ fontSize: '0.7rem', color: '#64748B' }}>Random Forest + LLaMA 3.3</p>
                 </div>
               </motion.div>
             </div>

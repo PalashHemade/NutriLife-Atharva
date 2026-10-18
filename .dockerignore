@@ -1,0 +1,21 @@
+node_modules
+.next
+.git
+.gitignore
+
+# secrets - never baked into an image, only passed at container run time
+.env
+.env.local
+.env.*.local
+
+# not needed to build/run the Next.js app image
+ml-service
+distributed-deadlock-detection
+*.docx
+diet_recommendations_dataset.csv
+README.md
+*.md
+
+.vscode
+.idea
+npm-debug.log*

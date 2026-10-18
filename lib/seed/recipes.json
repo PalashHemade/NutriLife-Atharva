@@ -1,202 +1,1200 @@
 [
   {
-    "name": "Vegetable Upma",
-    "type": "breakfast",
-    "dietType": "Balanced",
-    "ingredients": ["Semolina", "Vegetables", "Spices", "Oil"],
-    "instructions": "Roast semolina, cook vegetables, mix and serve.",
-    "cuisine": "South Indian",
-    "nutritionPer100g": {
-      "caloriesKcal": 280,
-      "proteinG": 8,
-      "carbsG": 42,
-      "fatG": 8,
-      "fiberG": 4,
-      "sugarG": 2,
-      "sodiumMg": 150
-    },
-    "prepTime": 10,
-    "cookTime": 15,
-    "servings": 2
-  },
-  {
-    "name": "Dal Tadka with Chapati",
-    "type": "lunch",
-    "dietType": "Balanced",
-    "ingredients": ["Lentils", "Spices", "Whole wheat flour", "Oil"],
-    "instructions": "Cook lentils with spices, make chapatis, serve together.",
+    "name": "Paneer Bhurji",
+    "type": "Veg",
+    "dietType": [
+      "Low_Carb"
+    ],
     "cuisine": "Indian",
-    "nutritionPer100g": {
-      "caloriesKcal": 260,
-      "proteinG": 9,
-      "carbsG": 34,
-      "fatG": 7,
-      "fiberG": 6,
-      "sugarG": 1,
-      "sodiumMg": 200
-    },
-    "prepTime": 20,
-    "cookTime": 30,
-    "servings": 2
-  },
-  {
-    "name": "Palak Paneer with Roti",
-    "type": "dinner",
-    "dietType": "Balanced",
-    "ingredients": ["Spinach", "Paneer", "Spices", "Whole wheat flour"],
-    "instructions": "Cook spinach with paneer and spices, serve with roti.",
-    "cuisine": "Indian",
-    "nutritionPer100g": {
-      "caloriesKcal": 240,
-      "proteinG": 11,
-      "carbsG": 20,
-      "fatG": 10,
-      "fiberG": 3,
-      "sugarG": 2,
-      "sodiumMg": 180
-    },
-    "prepTime": 15,
-    "cookTime": 25,
-    "servings": 2
-  },
-  {
-    "name": "Sprouts Salad",
-    "type": "snack",
-    "dietType": "Balanced",
-    "ingredients": ["Sprouted lentils", "Vegetables", "Lemon", "Spices"],
-    "instructions": "Mix sprouted lentils with chopped vegetables and spices.",
-    "cuisine": "Indian",
-    "nutritionPer100g": {
-      "caloriesKcal": 150,
-      "proteinG": 12,
-      "carbsG": 22,
-      "fatG": 2,
-      "fiberG": 8,
-      "sugarG": 3,
-      "sodiumMg": 50
-    },
-    "prepTime": 10,
-    "cookTime": 0,
-    "servings": 1
-  },
-  {
-    "name": "Grilled Chicken Salad",
-    "type": "lunch",
-    "dietType": "Low_Carb",
-    "ingredients": ["Chicken breast", "Mixed greens", "Olive oil", "Herbs"],
-    "instructions": "Grill chicken, toss with greens and dressing.",
-    "cuisine": "Mediterranean",
+    "cookingTimeMinutes": 20,
     "nutritionPer100g": {
       "caloriesKcal": 180,
-      "proteinG": 25,
-      "carbsG": 5,
-      "fatG": 8,
-      "fiberG": 2,
+      "proteinG": 12,
+      "fatG": 14,
+      "carbohydratesG": 5,
+      "sugarG": 2,
+      "sodiumMg": 250
+    },
+    "ingredients": [
+      {
+        "name": "Paneer",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "name": "Onion",
+        "quantity": 1,
+        "unit": "medium"
+      },
+      {
+        "name": "Tomato",
+        "quantity": 1,
+        "unit": "medium"
+      },
+      {
+        "name": "Oil",
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "name": "Turmeric",
+        "quantity": 0.5,
+        "unit": "tsp"
+      }
+    ],
+    "recipeSteps": [
+      "Heat oil in a pan on medium flame.",
+      "Add finely chopped onions and sauté until soft and translucent.",
+      "Add chopped tomatoes and cook until they become soft and mushy.",
+      "Add turmeric powder and mix well.",
+      "Crumble paneer using hands and add to the mixture.",
+      "Cook for 5–7 minutes while stirring occasionally.",
+      "Add salt to taste and mix well.",
+      "Cook for another 2 minutes and serve hot."
+    ],
+    "tags": [
+      "low-carb",
+      "protein"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Grilled Chicken Breast",
+    "type": "Non-Veg",
+    "dietType": [
+      "Low_Carb"
+    ],
+    "cuisine": "American",
+    "cookingTimeMinutes": 25,
+    "nutritionPer100g": {
+      "caloriesKcal": 165,
+      "proteinG": 31,
+      "fatG": 4,
+      "carbohydratesG": 0,
+      "sugarG": 0,
+      "sodiumMg": 70
+    },
+    "ingredients": [
+      {
+        "name": "Chicken breast",
+        "quantity": 200,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Wash and pat dry the chicken breast.",
+      "Season lightly with pepper and minimal salt.",
+      "Preheat grill pan on medium heat.",
+      "Place chicken on pan and cook for 6–7 minutes.",
+      "Flip and cook other side for another 6–7 minutes.",
+      "Check if fully cooked by cutting inside.",
+      "Rest for 2 minutes before serving.",
+      "Slice and serve hot."
+    ],
+    "tags": [
+      "high-protein"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Cauliflower Rice",
+    "type": "Veg",
+    "dietType": [
+      "Low_Carb"
+    ],
+    "cuisine": "Global",
+    "cookingTimeMinutes": 15,
+    "nutritionPer100g": {
+      "caloriesKcal": 90,
+      "proteinG": 3,
+      "fatG": 2,
+      "carbohydratesG": 8,
+      "sugarG": 2,
+      "sodiumMg": 30
+    },
+    "ingredients": [
+      {
+        "name": "Cauliflower",
+        "quantity": 1,
+        "unit": "cup"
+      }
+    ],
+    "recipeSteps": [
+      "Wash cauliflower and cut into florets.",
+      "Grate or blend into rice-like texture.",
+      "Heat pan and add a little oil.",
+      "Add cauliflower and sauté on medium heat.",
+      "Cook for 5–7 minutes until soft.",
+      "Stir occasionally to avoid burning.",
+      "Serve warm."
+    ],
+    "tags": [
+      "keto"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Egg Omelette",
+    "type": "Non-Veg",
+    "dietType": [
+      "Low_Carb"
+    ],
+    "cuisine": "Global",
+    "cookingTimeMinutes": 10,
+    "nutritionPer100g": {
+      "caloriesKcal": 155,
+      "proteinG": 13,
+      "fatG": 11,
+      "carbohydratesG": 1,
       "sugarG": 1,
       "sodiumMg": 120
     },
-    "prepTime": 15,
-    "cookTime": 15,
-    "servings": 1
+    "ingredients": [
+      {
+        "name": "Eggs",
+        "quantity": 2,
+        "unit": "pieces"
+      }
+    ],
+    "recipeSteps": [
+      "Crack eggs into a bowl and whisk well.",
+      "Heat pan and add oil or butter.",
+      "Pour egg mixture evenly into pan.",
+      "Cook on low heat until bottom sets.",
+      "Flip carefully and cook other side.",
+      "Fold and remove from pan.",
+      "Serve hot."
+    ],
+    "tags": [
+      "quick"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
   },
   {
-    "name": "Quinoa Bowl",
-    "type": "dinner",
-    "dietType": "Balanced",
-    "ingredients": ["Quinoa", "Vegetables", "Avocado", "Nuts"],
-    "instructions": "Cook quinoa, top with vegetables and avocado.",
-    "cuisine": "Global",
+    "name": "Zucchini Stir Fry",
+    "type": "Veg",
+    "dietType": [
+      "Low_Carb"
+    ],
+    "cuisine": "Chinese",
+    "cookingTimeMinutes": 15,
     "nutritionPer100g": {
-      "caloriesKcal": 220,
-      "proteinG": 8,
-      "carbsG": 30,
-      "fatG": 9,
-      "fiberG": 5,
+      "caloriesKcal": 70,
+      "proteinG": 2,
+      "fatG": 3,
+      "carbohydratesG": 6,
       "sugarG": 2,
-      "sodiumMg": 100
+      "sodiumMg": 40
     },
-    "prepTime": 10,
-    "cookTime": 20,
-    "servings": 1
+    "ingredients": [
+      {
+        "name": "Zucchini",
+        "quantity": 200,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Wash zucchini and slice evenly.",
+      "Heat oil in a wok.",
+      "Add zucchini and stir fry on medium flame.",
+      "Cook for 5–7 minutes until slightly tender.",
+      "Do not overcook to retain crunch.",
+      "Serve immediately."
+    ],
+    "tags": [
+      "vegan"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
   },
   {
-    "name": "Oatmeal with Berries",
-    "type": "breakfast",
-    "dietType": "Balanced",
-    "ingredients": ["Oats", "Berries", "Milk", "Honey"],
-    "instructions": "Cook oats with milk, top with berries.",
-    "cuisine": "Global",
+    "name": "Chicken Lettuce Wrap",
+    "type": "Non-Veg",
+    "dietType": [
+      "Low_Carb"
+    ],
+    "cuisine": "Asian",
+    "cookingTimeMinutes": 20,
     "nutritionPer100g": {
-      "caloriesKcal": 200,
-      "proteinG": 6,
-      "carbsG": 32,
-      "fatG": 4,
-      "fiberG": 4,
-      "sugarG": 12,
-      "sodiumMg": 80
+      "caloriesKcal": 140,
+      "proteinG": 20,
+      "fatG": 6,
+      "carbohydratesG": 4,
+      "sugarG": 2,
+      "sodiumMg": 90
     },
-    "prepTime": 5,
-    "cookTime": 10,
-    "servings": 1
+    "ingredients": [
+      {
+        "name": "Chicken",
+        "quantity": 150,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Cook minced chicken in a pan until fully done.",
+      "Season lightly and cook for 5 minutes.",
+      "Wash lettuce leaves and dry them.",
+      "Spoon cooked chicken into lettuce leaves.",
+      "Wrap gently and serve fresh."
+    ],
+    "tags": [
+      "low-carb"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
   },
   {
-    "name": "Greek Yogurt Parfait",
-    "type": "snack",
-    "dietType": "Low_Carb",
-    "ingredients": ["Greek yogurt", "Nuts", "Berries"],
-    "instructions": "Layer yogurt with nuts and berries.",
-    "cuisine": "Mediterranean",
+    "name": "Palak Paneer",
+    "type": "Veg",
+    "dietType": [
+      "Low_Carb"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 30,
+    "nutritionPer100g": {
+      "caloriesKcal": 170,
+      "proteinG": 10,
+      "fatG": 13,
+      "carbohydratesG": 6,
+      "sugarG": 2,
+      "sodiumMg": 200
+    },
+    "ingredients": [
+      {
+        "name": "Spinach",
+        "quantity": 200,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Wash spinach and blanch in boiling water for 2 minutes.",
+      "Blend into a smooth puree.",
+      "Heat oil and add spices.",
+      "Add spinach puree and cook for 5 minutes.",
+      "Add paneer cubes and simmer.",
+      "Cook for another 5 minutes and serve hot."
+    ],
+    "tags": [
+      "iron-rich"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Avocado Salad",
+    "type": "Veg",
+    "dietType": [
+      "Low_Carb"
+    ],
+    "cuisine": "Mexican",
+    "cookingTimeMinutes": 10,
     "nutritionPer100g": {
       "caloriesKcal": 160,
-      "proteinG": 15,
-      "carbsG": 12,
-      "fatG": 7,
-      "fiberG": 3,
-      "sugarG": 8,
-      "sodiumMg": 60
+      "proteinG": 2,
+      "fatG": 15,
+      "carbohydratesG": 9,
+      "sugarG": 1,
+      "sodiumMg": 10
     },
-    "prepTime": 5,
-    "cookTime": 0,
-    "servings": 1
+    "ingredients": [
+      {
+        "name": "Avocado",
+        "quantity": 1,
+        "unit": "piece"
+      }
+    ],
+    "recipeSteps": [
+      "Cut avocado and remove seed.",
+      "Scoop flesh and dice into cubes.",
+      "Place in bowl and mix gently.",
+      "Serve immediately to avoid browning."
+    ],
+    "tags": [
+      "healthy-fat"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
   },
   {
-    "name": "Steamed Fish with Vegetables",
-    "type": "dinner",
-    "dietType": "Low_Sodium",
-    "ingredients": ["Fish fillet", "Mixed vegetables", "Herbs"],
-    "instructions": "Steam fish with vegetables and herbs.",
-    "cuisine": "Asian",
+    "name": "Grilled Fish",
+    "type": "Non-Veg",
+    "dietType": [
+      "Low_Carb"
+    ],
+    "cuisine": "Mediterranean",
+    "cookingTimeMinutes": 20,
     "nutritionPer100g": {
-      "caloriesKcal": 120,
-      "proteinG": 20,
-      "carbsG": 8,
-      "fatG": 3,
-      "fiberG": 3,
-      "sugarG": 4,
+      "caloriesKcal": 180,
+      "proteinG": 22,
+      "fatG": 8,
+      "carbohydratesG": 0,
+      "sugarG": 0,
       "sodiumMg": 80
     },
-    "prepTime": 10,
-    "cookTime": 15,
-    "servings": 1
+    "ingredients": [
+      {
+        "name": "Fish",
+        "quantity": 200,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Clean fish thoroughly and pat dry.",
+      "Apply light seasoning.",
+      "Preheat grill.",
+      "Cook each side for 6–7 minutes.",
+      "Check doneness and remove.",
+      "Serve hot."
+    ],
+    "tags": [
+      "omega3"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
   },
   {
-    "name": "Avocado Toast",
-    "type": "breakfast",
-    "dietType": "Balanced",
-    "ingredients": ["Whole grain bread", "Avocado", "Tomato", "Egg"],
-    "instructions": "Toast bread, mash avocado on top, add toppings.",
-    "cuisine": "Global",
+    "name": "Broccoli Stir Fry",
+    "type": "Veg",
+    "dietType": [
+      "Low_Carb"
+    ],
+    "cuisine": "Chinese",
+    "cookingTimeMinutes": 15,
     "nutritionPer100g": {
-      "caloriesKcal": 250,
-      "proteinG": 9,
-      "carbsG": 25,
-      "fatG": 14,
-      "fiberG": 7,
+      "caloriesKcal": 80,
+      "proteinG": 4,
+      "fatG": 2,
+      "carbohydratesG": 10,
+      "sugarG": 2,
+      "sodiumMg": 50
+    },
+    "ingredients": [
+      {
+        "name": "Broccoli",
+        "quantity": 200,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Wash and cut broccoli into florets.",
+      "Heat oil in a pan.",
+      "Add broccoli and stir fry.",
+      "Cook until tender yet slightly crisp.",
+      "Serve hot."
+    ],
+    "tags": [
+      "fiber"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Steamed Vegetables",
+    "type": "Veg",
+    "dietType": [
+      "Low_Sodium"
+    ],
+    "cuisine": "Global",
+    "cookingTimeMinutes": 15,
+    "nutritionPer100g": {
+      "caloriesKcal": 80,
+      "proteinG": 3,
+      "fatG": 1,
+      "carbohydratesG": 15,
+      "sugarG": 4,
+      "sodiumMg": 40
+    },
+    "ingredients": [
+      {
+        "name": "Broccoli",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Carrot",
+        "quantity": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Beans",
+        "quantity": 50,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Wash all vegetables thoroughly under running water.",
+      "Cut broccoli into florets, slice carrots, and chop beans evenly.",
+      "Bring water to boil in a steamer.",
+      "Place vegetables in the steaming basket.",
+      "Cover and steam for 7–10 minutes until tender but crisp.",
+      "Remove from steamer and transfer to serving bowl.",
+      "Serve immediately to retain nutrients."
+    ],
+    "tags": [
+      "low-sodium",
+      "healthy"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Oats Porridge",
+    "type": "Veg",
+    "dietType": [
+      "Low_Sodium"
+    ],
+    "cuisine": "Global",
+    "cookingTimeMinutes": 10,
+    "nutritionPer100g": {
+      "caloriesKcal": 120,
+      "proteinG": 4,
+      "fatG": 2,
+      "carbohydratesG": 22,
+      "sugarG": 3,
+      "sodiumMg": 30
+    },
+    "ingredients": [
+      {
+        "name": "Oats",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "name": "Water",
+        "quantity": 2,
+        "unit": "cups"
+      }
+    ],
+    "recipeSteps": [
+      "Add oats and water to a saucepan.",
+      "Place on medium heat and bring to a boil.",
+      "Stir continuously to prevent sticking.",
+      "Cook for 5–7 minutes until thick consistency forms.",
+      "Turn off heat and let it rest for 2 minutes.",
+      "Serve warm."
+    ],
+    "tags": [
+      "breakfast"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Fruit Salad",
+    "type": "Veg",
+    "dietType": [
+      "Low_Sodium"
+    ],
+    "cuisine": "Global",
+    "cookingTimeMinutes": 5,
+    "nutritionPer100g": {
+      "caloriesKcal": 90,
+      "proteinG": 1,
+      "fatG": 0,
+      "carbohydratesG": 22,
+      "sugarG": 15,
+      "sodiumMg": 5
+    },
+    "ingredients": [
+      {
+        "name": "Apple",
+        "quantity": 1,
+        "unit": "piece"
+      },
+      {
+        "name": "Banana",
+        "quantity": 1,
+        "unit": "piece"
+      },
+      {
+        "name": "Papaya",
+        "quantity": 100,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Wash all fruits thoroughly.",
+      "Peel banana and papaya.",
+      "Cut all fruits into small bite-sized pieces.",
+      "Mix gently in a bowl.",
+      "Serve immediately for best taste."
+    ],
+    "tags": [
+      "fresh"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Boiled Chicken",
+    "type": "Non-Veg",
+    "dietType": [
+      "Low_Sodium"
+    ],
+    "cuisine": "Global",
+    "cookingTimeMinutes": 20,
+    "nutritionPer100g": {
+      "caloriesKcal": 150,
+      "proteinG": 28,
+      "fatG": 3,
+      "carbohydratesG": 0,
+      "sugarG": 0,
+      "sodiumMg": 60
+    },
+    "ingredients": [
+      {
+        "name": "Chicken",
+        "quantity": 200,
+        "unit": "g"
+      },
+      {
+        "name": "Water",
+        "quantity": 2,
+        "unit": "cups"
+      }
+    ],
+    "recipeSteps": [
+      "Clean chicken pieces properly.",
+      "Add chicken and water to a pot.",
+      "Bring to boil on medium flame.",
+      "Remove foam formed on top.",
+      "Cook for 15–20 minutes until tender.",
+      "Check doneness and remove.",
+      "Serve warm."
+    ],
+    "tags": [
+      "protein"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Vegetable Soup",
+    "type": "Veg",
+    "dietType": [
+      "Low_Sodium"
+    ],
+    "cuisine": "Global",
+    "cookingTimeMinutes": 25,
+    "nutritionPer100g": {
+      "caloriesKcal": 70,
+      "proteinG": 2,
+      "fatG": 1,
+      "carbohydratesG": 12,
+      "sugarG": 4,
+      "sodiumMg": 50
+    },
+    "ingredients": [
+      {
+        "name": "Carrot",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Beans",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Cabbage",
+        "quantity": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Water",
+        "quantity": 3,
+        "unit": "cups"
+      }
+    ],
+    "recipeSteps": [
+      "Chop all vegetables finely.",
+      "Add water to a pot and bring to boil.",
+      "Add vegetables and cook for 15 minutes.",
+      "Stir occasionally for even cooking.",
+      "Cook until vegetables soften.",
+      "Serve hot."
+    ],
+    "tags": [
+      "light"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Brown Rice",
+    "type": "Veg",
+    "dietType": [
+      "Low_Sodium"
+    ],
+    "cuisine": "Asian",
+    "cookingTimeMinutes": 30,
+    "nutritionPer100g": {
+      "caloriesKcal": 110,
+      "proteinG": 3,
+      "fatG": 1,
+      "carbohydratesG": 23,
+      "sugarG": 1,
+      "sodiumMg": 10
+    },
+    "ingredients": [
+      {
+        "name": "Brown rice",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "name": "Water",
+        "quantity": 2.5,
+        "unit": "cups"
+      }
+    ],
+    "recipeSteps": [
+      "Wash rice thoroughly under running water.",
+      "Add rice and water to a pot.",
+      "Bring to boil, then reduce heat.",
+      "Cover and cook for 25–30 minutes.",
+      "Turn off heat and let it rest.",
+      "Fluff with fork and serve."
+    ],
+    "tags": [
+      "fiber"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Grilled Fish",
+    "type": "Non-Veg",
+    "dietType": [
+      "Low_Sodium"
+    ],
+    "cuisine": "Mediterranean",
+    "cookingTimeMinutes": 20,
+    "nutritionPer100g": {
+      "caloriesKcal": 160,
+      "proteinG": 22,
+      "fatG": 7,
+      "carbohydratesG": 0,
+      "sugarG": 0,
+      "sodiumMg": 50
+    },
+    "ingredients": [
+      {
+        "name": "Fish",
+        "quantity": 200,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Clean fish and pat dry.",
+      "Preheat grill pan.",
+      "Place fish on pan and cook.",
+      "Cook each side for 6–7 minutes.",
+      "Ensure fish is cooked through.",
+      "Serve hot."
+    ],
+    "tags": [
+      "omega3"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Vegetable Upma",
+    "type": "Veg",
+    "dietType": [
+      "Low_Sodium"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 20,
+    "nutritionPer100g": {
+      "caloriesKcal": 130,
+      "proteinG": 4,
+      "fatG": 3,
+      "carbohydratesG": 20,
+      "sugarG": 2,
+      "sodiumMg": 80
+    },
+    "ingredients": [
+      {
+        "name": "Rava",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "name": "Vegetables",
+        "quantity": 100,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Dry roast rava until light golden.",
+      "Heat oil and sauté vegetables.",
+      "Add water and bring to boil.",
+      "Slowly add rava while stirring continuously.",
+      "Cook until mixture thickens.",
+      "Cover and cook for 3–5 minutes.",
+      "Serve hot."
+    ],
+    "tags": [
+      "breakfast"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Idli",
+    "type": "Veg",
+    "dietType": [
+      "Low_Sodium"
+    ],
+    "cuisine": "South Indian",
+    "cookingTimeMinutes": 30,
+    "nutritionPer100g": {
+      "caloriesKcal": 120,
+      "proteinG": 4,
+      "fatG": 1,
+      "carbohydratesG": 24,
+      "sugarG": 1,
+      "sodiumMg": 20
+    },
+    "ingredients": [
+      {
+        "name": "Idli batter",
+        "quantity": 1,
+        "unit": "cup"
+      }
+    ],
+    "recipeSteps": [
+      "Grease idli molds lightly.",
+      "Pour batter into molds.",
+      "Steam for 10–12 minutes.",
+      "Insert knife to check doneness.",
+      "Remove and cool slightly.",
+      "Serve with chutney."
+    ],
+    "tags": [
+      "light"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Vegetable Poha",
+    "type": "Veg",
+    "dietType": [
+      "Low_Sodium"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 15,
+    "nutritionPer100g": {
+      "caloriesKcal": 140,
+      "proteinG": 3,
+      "fatG": 3,
+      "carbohydratesG": 25,
+      "sugarG": 2,
+      "sodiumMg": 70
+    },
+    "ingredients": [
+      {
+        "name": "Poha",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "name": "Onion",
+        "quantity": 1,
+        "unit": "small"
+      }
+    ],
+    "recipeSteps": [
+      "Wash poha and drain water.",
+      "Heat oil and sauté chopped onions.",
+      "Add vegetables if desired and cook briefly.",
+      "Add poha and mix well.",
+      "Cook for 3–5 minutes.",
+      "Serve hot."
+    ],
+    "tags": [
+      "quick"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Vegetable Khichdi",
+    "type": "Veg",
+    "dietType": [
+      "Balanced"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 30,
+    "nutritionPer100g": {
+      "caloriesKcal": 120,
+      "proteinG": 4,
+      "fatG": 2,
+      "carbohydratesG": 22,
+      "sugarG": 2,
+      "sodiumMg": 150
+    },
+    "ingredients": [
+      {
+        "name": "Rice",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "name": "Moong dal",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "name": "Mixed vegetables",
+        "quantity": 1,
+        "unit": "cup"
+      }
+    ],
+    "recipeSteps": [
+      "Wash rice and dal thoroughly under running water.",
+      "Soak them together for 10 minutes.",
+      "Add them to a pressure cooker with vegetables and water.",
+      "Add turmeric and mix well.",
+      "Close lid and cook for 3 whistles.",
+      "Allow pressure to release naturally.",
+      "Open, mix well to desired consistency.",
+      "Serve hot."
+    ],
+    "tags": [
+      "healthy"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Butter Chicken",
+    "type": "Non-Veg",
+    "dietType": [
+      "Balanced"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 45,
+    "nutritionPer100g": {
+      "caloriesKcal": 190,
+      "proteinG": 15,
+      "fatG": 12,
+      "carbohydratesG": 6,
+      "sugarG": 3,
+      "sodiumMg": 320
+    },
+    "ingredients": [
+      {
+        "name": "Chicken",
+        "quantity": 250,
+        "unit": "g"
+      },
+      {
+        "name": "Tomato puree",
+        "quantity": 2,
+        "unit": "medium"
+      },
+      {
+        "name": "Butter",
+        "quantity": 2,
+        "unit": "tbsp"
+      }
+    ],
+    "recipeSteps": [
+      "Marinate chicken with spices and yogurt for 30 minutes.",
+      "Heat butter in a pan.",
+      "Add tomato puree and cook until oil separates.",
+      "Add marinated chicken and cook for 10–12 minutes.",
+      "Stir occasionally to prevent burning.",
+      "Add cream and mix well.",
+      "Simmer for 5 minutes.",
+      "Serve hot."
+    ],
+    "tags": [
+      "rich"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Dal Tadka",
+    "type": "Veg",
+    "dietType": [
+      "Balanced"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 25,
+    "nutritionPer100g": {
+      "caloriesKcal": 130,
+      "proteinG": 6,
+      "fatG": 4,
+      "carbohydratesG": 18,
+      "sugarG": 2,
+      "sodiumMg": 180
+    },
+    "ingredients": [
+      {
+        "name": "Toor dal",
+        "quantity": 1,
+        "unit": "cup"
+      }
+    ],
+    "recipeSteps": [
+      "Wash dal and cook in pressure cooker until soft.",
+      "Mash slightly for smooth texture.",
+      "Heat oil in another pan.",
+      "Add cumin seeds and garlic.",
+      "Pour this tempering over dal.",
+      "Mix well and simmer for 5 minutes.",
+      "Serve hot."
+    ],
+    "tags": [
+      "protein"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Chicken Curry",
+    "type": "Non-Veg",
+    "dietType": [
+      "Balanced"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 40,
+    "nutritionPer100g": {
+      "caloriesKcal": 200,
+      "proteinG": 18,
+      "fatG": 10,
+      "carbohydratesG": 8,
+      "sugarG": 3,
+      "sodiumMg": 300
+    },
+    "ingredients": [
+      {
+        "name": "Chicken",
+        "quantity": 250,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Heat oil and sauté onions until golden.",
+      "Add ginger-garlic paste and cook.",
+      "Add tomatoes and cook until soft.",
+      "Add spices and mix well.",
+      "Add chicken and cook for 15–20 minutes.",
+      "Add water and simmer until cooked.",
+      "Serve hot."
+    ],
+    "tags": [
+      "spicy"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Veg Pulao",
+    "type": "Veg",
+    "dietType": [
+      "Balanced"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 30,
+    "nutritionPer100g": {
+      "caloriesKcal": 160,
+      "proteinG": 5,
+      "fatG": 4,
+      "carbohydratesG": 28,
+      "sugarG": 3,
+      "sodiumMg": 200
+    },
+    "ingredients": [
+      {
+        "name": "Rice",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "name": "Vegetables",
+        "quantity": 1,
+        "unit": "cup"
+      }
+    ],
+    "recipeSteps": [
+      "Heat oil in a cooker.",
+      "Add whole spices and sauté briefly.",
+      "Add vegetables and cook for 3–4 minutes.",
+      "Add washed rice and mix.",
+      "Add water and cook for 2 whistles.",
+      "Allow pressure to release.",
+      "Fluff and serve hot."
+    ],
+    "tags": [
+      "flavorful"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Fish Curry",
+    "type": "Non-Veg",
+    "dietType": [
+      "Balanced"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 35,
+    "nutritionPer100g": {
+      "caloriesKcal": 180,
+      "proteinG": 20,
+      "fatG": 8,
+      "carbohydratesG": 6,
+      "sugarG": 2,
+      "sodiumMg": 250
+    },
+    "ingredients": [
+      {
+        "name": "Fish",
+        "quantity": 200,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Clean fish pieces thoroughly.",
+      "Heat oil and sauté onions.",
+      "Add tomato puree and cook.",
+      "Add spices and mix well.",
+      "Add fish pieces carefully.",
+      "Cook for 10–12 minutes without stirring too much.",
+      "Simmer and serve hot."
+    ],
+    "tags": [
+      "coastal"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Chapati with Sabzi",
+    "type": "Veg",
+    "dietType": [
+      "Balanced"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 25,
+    "nutritionPer100g": {
+      "caloriesKcal": 150,
+      "proteinG": 4,
+      "fatG": 3,
+      "carbohydratesG": 26,
+      "sugarG": 2,
+      "sodiumMg": 180
+    },
+    "ingredients": [
+      {
+        "name": "Wheat flour",
+        "quantity": 1,
+        "unit": "cup"
+      }
+    ],
+    "recipeSteps": [
+      "Prepare dough using wheat flour and water.",
+      "Knead well until soft consistency.",
+      "Divide into small balls and roll into flat circles.",
+      "Cook on hot tawa until brown spots appear.",
+      "Serve with vegetable curry."
+    ],
+    "tags": [
+      "daily"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Egg Curry",
+    "type": "Non-Veg",
+    "dietType": [
+      "Balanced"
+    ],
+    "cuisine": "Indian",
+    "cookingTimeMinutes": 30,
+    "nutritionPer100g": {
+      "caloriesKcal": 170,
+      "proteinG": 12,
+      "fatG": 9,
+      "carbohydratesG": 6,
+      "sugarG": 2,
+      "sodiumMg": 220
+    },
+    "ingredients": [
+      {
+        "name": "Eggs",
+        "quantity": 4,
+        "unit": "pieces"
+      }
+    ],
+    "recipeSteps": [
+      "Boil eggs and peel shells.",
+      "Heat oil and sauté onions.",
+      "Add tomato puree and cook well.",
+      "Add spices and mix.",
+      "Add boiled eggs and coat with gravy.",
+      "Simmer for 5–7 minutes.",
+      "Serve hot."
+    ],
+    "tags": [
+      "protein"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Vegetable Sandwich",
+    "type": "Veg",
+    "dietType": [
+      "Balanced"
+    ],
+    "cuisine": "Global",
+    "cookingTimeMinutes": 10,
+    "nutritionPer100g": {
+      "caloriesKcal": 140,
+      "proteinG": 4,
+      "fatG": 3,
+      "carbohydratesG": 24,
       "sugarG": 3,
       "sodiumMg": 150
     },
-    "prepTime": 5,
-    "cookTime": 5,
-    "servings": 1
+    "ingredients": [
+      {
+        "name": "Bread",
+        "quantity": 2,
+        "unit": "slices"
+      }
+    ],
+    "recipeSteps": [
+      "Place vegetables between bread slices.",
+      "Spread butter lightly if desired.",
+      "Toast on pan or sandwich maker.",
+      "Cut into halves.",
+      "Serve warm."
+    ],
+    "tags": [
+      "quick"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "name": "Chicken Wrap",
+    "type": "Non-Veg",
+    "dietType": [
+      "Balanced"
+    ],
+    "cuisine": "Mexican",
+    "cookingTimeMinutes": 20,
+    "nutritionPer100g": {
+      "caloriesKcal": 180,
+      "proteinG": 15,
+      "fatG": 6,
+      "carbohydratesG": 18,
+      "sugarG": 2,
+      "sodiumMg": 220
+    },
+    "ingredients": [
+      {
+        "name": "Chicken",
+        "quantity": 150,
+        "unit": "g"
+      }
+    ],
+    "recipeSteps": [
+      "Cook chicken pieces with spices until done.",
+      "Warm tortilla or roti.",
+      "Place chicken in center.",
+      "Add vegetables if desired.",
+      "Roll tightly into wrap.",
+      "Serve immediately."
+    ],
+    "tags": [
+      "fast"
+    ],
+    "createdAt": "2026-01-01T00:00:00Z"
   }
 ]

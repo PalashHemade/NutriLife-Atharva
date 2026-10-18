@@ -22,7 +22,9 @@ export default withAuth(
   },
   {
     callbacks: {
-      authorized: ({ token }) => !!token,
+      // Deny access once the refresh token has expired/been revoked and the
+      // access token could not be renewed (jwt callback sets token.error).
+      authorized: ({ token }) => !!token && !token.error,
     },
   }
 );

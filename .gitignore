@@ -34,6 +34,9 @@ yarn-error.log*
 .env*
 .env.local
 
+# real k8s secret manifests (the .example.yaml template is fine to commit)
+k8s/secret.yaml
+
 # vercel
 .vercel
 
